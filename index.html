@@ -64,8 +64,11 @@ body::before{
   z-index:0;
   opacity:1;
   background-image:
+    url(art/texture.webp),
     radial-gradient(ellipse at 50% 18%, rgba(24,112,84,.55), transparent 62%),
     radial-gradient(ellipse at 50% 100%, rgba(2,24,18,.7), transparent 60%);
+  background-size:520px 520px,auto,auto;
+  background-repeat:repeat,no-repeat,no-repeat;
 }
 
 img,svg{display:block;max-width:100%}
@@ -86,9 +89,29 @@ img,svg{display:block;max-width:100%}
   inset:9px 9px calc(var(--bar-h) + 9px + env(safe-area-inset-bottom)) 9px;
   border:1px solid var(--frame);
   pointer-events:none;
-  z-index:6;
+  z-index:0;   /* under the artwork so the flowers sit over the lines */
   max-width:520px;
   margin:0 auto;
+
+  /* the frame is cut away beneath the two cover flowers (they sit on top of it);
+     --sy follows the scroll so the cut-outs travel with the flowers */
+  --sy:0px;
+  --fw:min(100vw,520px);
+  -webkit-mask-image:linear-gradient(#000,#000),url(art/mask-tl.png),url(art/mask-br.png);
+  mask-image:linear-gradient(#000,#000),url(art/mask-tl.png),url(art/mask-br.png);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-composite:source-out,source-over,source-over;
+  mask-composite:subtract,add,add;
+  -webkit-mask-size:100% 100%,calc(var(--fw) * .68) auto,calc(var(--fw) * .52) auto;
+  mask-size:100% 100%,calc(var(--fw) * .68) auto,calc(var(--fw) * .52) auto;
+  -webkit-mask-position:0 0,left -17px top calc(-17px - var(--sy)),right -17px bottom calc(-17px + var(--sy));
+  mask-position:0 0,left -17px top calc(-17px - var(--sy)),right -17px bottom calc(-17px + var(--sy));
+}
+@media (min-width:560px){
+  .frame{
+    -webkit-mask-size:100% 100%,calc(var(--fw) * .50) auto,calc(var(--fw) * .40) auto;
+    mask-size:100% 100%,calc(var(--fw) * .50) auto,calc(var(--fw) * .40) auto;
+  }
 }
 .frame::after{
   content:"";
@@ -146,16 +169,16 @@ img,svg{display:block;max-width:100%}
 }
 .art img{width:100%;height:auto;display:block}
 
-/* cover corners */
-.art--tl{top:-2%;left:-8%;width:58%}
-.art--br{bottom:2%;right:-8%;width:56%}
-.art--bl{bottom:9%;left:-11%;width:38%;opacity:.8}
+/* cover flowers: one large at the top, one smaller at the bottom */
+.art--tl{top:-8px;left:-8px;width:68%;opacity:1}
+.art--tl img{transform:rotate(180deg)}
+.art--br{bottom:calc(var(--bar-h) - 8px);right:-8px;width:52%;opacity:1}
 
-/* small sprigs peeking in from the edges as you scroll */
-.art--side{width:38%;opacity:.62}
+/* quiet leaf sprays scattered behind the text */
+.art--side{width:52%;opacity:.15}
 .art--side img{transition:none;will-change:transform}
-.art--side.l{left:-19%}
-.art--side.r{right:-19%}
+.art--side.l{left:-24%}
+.art--side.r{right:-24%}
 .art--s1{top:6%}
 .art--s2{top:14%}
 .art--s3{top:4%}
@@ -164,27 +187,17 @@ img,svg{display:block;max-width:100%}
 .art--s6{top:20%}
 
 @media (min-width:560px){
-  .art--side{width:30%}
-  .art--side.l{left:-13%}
-  .art--side.r{right:-13%}
-  .art--bl{left:-6%;width:30%}
+  .art--side{width:40%}
+  .art--side.l{left:-16%}
+  .art--side.r{right:-16%}
+  .art--tl{width:50%}
+  .art--br{width:40%}
 }
 
-/* section accents, quieter */
-.art--salam{top:15%;right:-22%;width:44%;opacity:.6}
-.art--wish{top:14%;left:-12%;width:40%;opacity:.6;transform:rotate(-20deg)}
-.art--end{top:16%;right:-12%;width:42%;opacity:.62}
-.art--end2{bottom:-2%;left:-10%;width:36%;opacity:.62}
-
-/* butterfly, sized up but sitting quietly behind the text */
-.art--bf1{top:24%;right:0;width:26%;opacity:.8}
-
-@media (min-width:560px){
-  .art--tl{left:-7%;width:38%}
-  .art--br{right:-6%;width:40%}
-  .art--end2{left:-9%;width:26%}
-  .art--bf1{width:17%}
-}
+.art--salam{top:15%;right:-26%;width:56%;opacity:.15}
+.art--wish{top:14%;left:-18%;width:54%;opacity:.15}
+.art--end{top:16%;right:-18%;width:54%;opacity:.15}
+.art--end2{bottom:-2%;left:-18%;width:54%;opacity:.15}
 
 /* ─────────────────────────────────────────────
    COVER
@@ -247,7 +260,7 @@ img,svg{display:block;max-width:100%}
 .scroll-cue{
   position:absolute;
   bottom:26px;
-  left:0;right:0;
+  left:0;right:38%;   /* keeps clear of the bottom-right flower */
   z-index:2;
   text-align:center;
   font-size:.66rem;
@@ -1006,6 +1019,7 @@ body.locked{overflow:hidden}
   margin:0 auto;
   pointer-events:none;
   z-index:5;
+  opacity:var(--edge,0);   /* off on the cover so the flowers reach the frame; eases in on scroll */
 }
 .edge--top{
   top:0;
@@ -1114,13 +1128,10 @@ body.locked{overflow:hidden}
   <!-- ══════════ COVER ══════════ -->
   <section class="cover">
     <div class="art art--tl enter d1" aria-hidden="true">
-      <img style="width:124.45%;max-width:none;margin:-8.57% 0 0.00% -6.17%" src="art/corner-tl.svg" alt="" width="1191" height="1474" fetchpriority="high">
+      <img src="art/flower.webp" alt="" width="1000" height="983" fetchpriority="high">
     </div>
     <div class="art art--br enter d1" aria-hidden="true">
-      <img style="width:135.27%;max-width:none;margin:0.00% 0 -14.17% -15.74%" src="art/corner-br.svg" alt="" width="1212" height="1624" fetchpriority="high">
-    </div>
-    <div class="art art--bl" aria-hidden="true">
-      <img src="art/butterfly-a.svg" alt="" width="914" height="1082" fetchpriority="high">
+      <img src="art/flower.webp" alt="" width="1000" height="983" fetchpriority="high">
     </div>
 
     <div class="plate-wrap">
@@ -1154,11 +1165,11 @@ body.locked{overflow:hidden}
 
   <!-- ══════════ SALAM ══════════ -->
   <section class="panel">
-    <div class="art art--salam" aria-hidden="true" style="transform:scaleX(-1)">
-      <img style="width:131.10%;max-width:none;margin:-25.99% 0 0.00% -3.52%" src="art/leaf-a.svg" alt="" width="1488" height="1385" loading="lazy">
+    <div class="art art--salam" aria-hidden="true" style="transform:scaleX(-1) rotate(14deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
-    <div class="art art--side l art--s6" aria-hidden="true">
-      <img style="width:104.54%;max-width:none;margin:-1.44% 0 0.00% -4.54%" src="art/leaf-d.svg" alt="" width="945" height="1454" loading="lazy">
+    <div class="art art--side l art--s6" aria-hidden="true" style="transform:rotate(30deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
 
     <p class="bismillah">السلام عليكم</p>
@@ -1195,7 +1206,7 @@ body.locked{overflow:hidden}
     <hr class="rule">
 
     <div class="art art--side l art--s1" aria-hidden="true" style="transform:rotate(-24deg)">
-      <img style="width:103.93%;max-width:none;margin:-14.05% 0 0.00% -3.93%" src="art/leaf-c.svg" alt="" width="1006" height="1295" loading="lazy">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
 
     <dl class="detail">
@@ -1229,8 +1240,8 @@ body.locked{overflow:hidden}
   <!-- ══════════ ATURCARA ══════════ -->
   <section class="panel panel--tight">
     <hr class="rule">
-    <div class="art art--side r art--s2" aria-hidden="true" style="transform:scaleX(-1)">
-      <img style="width:108.61%;max-width:none;margin:-23.88% 0 0.00% -3.46%" src="art/leaf-b.svg" alt="" width="1160" height="1329" loading="lazy">
+    <div class="art art--side r art--s2" aria-hidden="true" style="transform:scaleX(-1) rotate(-22deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
 
     <p class="eyebrow">Aturcara Majlis</p>
@@ -1244,11 +1255,8 @@ body.locked{overflow:hidden}
   <!-- ══════════ COUNTDOWN ══════════ -->
   <section class="panel panel--tight">
     <hr class="rule">
-    <div class="art art--side l art--s3" aria-hidden="true">
-      <img style="width:131.10%;max-width:none;margin:-25.99% 0 0.00% -3.52%" src="art/leaf-a.svg" alt="" width="1488" height="1385" loading="lazy">
-    </div>
-    <div class="art art--bf1" aria-hidden="true" style="transform:rotate(-10deg)">
-      <img src="art/butterfly-b.svg" alt="" width="1536" height="1024" loading="lazy">
+    <div class="art art--side l art--s3" aria-hidden="true" style="transform:rotate(-12deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
 
     <p class="eyebrow">Majlis akan bermula</p>
@@ -1266,11 +1274,11 @@ body.locked{overflow:hidden}
   <!-- ══════════ KEHADIRAN ══════════ -->
   <section class="panel panel--tight" id="kehadiran">
     <hr class="rule">
-    <div class="art art--side r art--s4" aria-hidden="true" style="transform:scaleX(-1)">
-      <img style="width:103.93%;max-width:none;margin:-14.05% 0 0.00% -3.93%" src="art/leaf-c.svg" alt="" width="1006" height="1295" loading="lazy">
+    <div class="art art--side r art--s4" aria-hidden="true" style="transform:scaleX(-1) rotate(26deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
-    <div class="art art--side l art--s5" aria-hidden="true">
-      <img style="width:112.98%;max-width:none;margin:-16.93% 0 0.00% -5.07%" src="art/leaf-e.svg" alt="" width="914" height="1093" loading="lazy">
+    <div class="art art--side l art--s5" aria-hidden="true" style="transform:rotate(-40deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
 
     <p class="eyebrow">Kehadiran</p>
@@ -1284,8 +1292,8 @@ body.locked{overflow:hidden}
   <!-- ══════════ UCAPAN ══════════ -->
   <section class="panel panel--tight" id="ucapan">
     <hr class="rule">
-    <div class="art art--wish" aria-hidden="true">
-      <img style="width:108.61%;max-width:none;margin:-23.88% 0 0.00% -3.46%" src="art/leaf-b.svg" alt="" width="1160" height="1329" loading="lazy">
+    <div class="art art--wish" aria-hidden="true" style="transform:rotate(-18deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
 
     <p class="eyebrow">Ucapan</p>
@@ -1299,11 +1307,11 @@ body.locked{overflow:hidden}
   <!-- ══════════ PENUTUP ══════════ -->
   <section class="panel">
     <hr class="rule">
-    <div class="art art--end" aria-hidden="true" style="transform:scaleX(-1)">
-      <img style="width:103.93%;max-width:none;margin:-14.05% 0 0.00% -3.93%" src="art/leaf-c.svg" alt="" width="1006" height="1295" loading="lazy">
+    <div class="art art--end" aria-hidden="true" style="transform:scaleX(-1) rotate(10deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
-    <div class="art art--end2" aria-hidden="true">
-      <img style="width:104.54%;max-width:none;margin:-1.44% 0 0.00% -4.54%" src="art/leaf-d.svg" alt="" width="945" height="1454" loading="lazy">
+    <div class="art art--end2" aria-hidden="true" style="transform:rotate(24deg)">
+      <img src="art/leaves.webp" alt="" width="900" height="672" loading="lazy">
     </div>
 
     <p class="doa-long">
@@ -2088,9 +2096,13 @@ function driftSides(vh){
 
 let ticking = false;
 
+const frameEl = document.querySelector(".frame");
+
 function onScroll(){
   const y = window.scrollY;
   const vh = window.innerHeight;
+  if (frameEl) frameEl.style.setProperty("--sy", Math.min(y, vh * 1.5).toFixed(1) + "px");
+  document.documentElement.style.setProperty("--edge", Math.min(1, y / 140).toFixed(2));
 
   const max = document.documentElement.scrollHeight - vh;
   bar.style.width = (max > 0 ? Math.min(100, (y / max) * 100) : 0) + "%";
