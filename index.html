@@ -2004,7 +2004,7 @@ function makePetals(n){
     d.style.animationDuration = dur.toFixed(1) + "s";
     d.style.animationDelay    = delay.toFixed(1) + "s";
     d.style.setProperty("--spin", spin + "deg");
-    d.style.setProperty("--peak", (0.35 + Math.random() * 0.35).toFixed(2));
+    d.style.setProperty("--peak", (0.10 + Math.random() * 0.15).toFixed(2));
 
     const sway = document.createElement("span");
     sway.className = "sway";
