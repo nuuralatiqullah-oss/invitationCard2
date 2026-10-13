@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atiq &amp; Anis — Majlis Kesyukuran</title>
+<meta name="description" content="Majlis Kesyukuran Atiq &amp; Anis · Sabtu, 12 Disember 2026 · Dewan Majlis Ghumoh Mek, Pasir Mas, Kelantan">
+<meta name="theme-color" content="#EFEDE3">
+<meta property="og:title" content="Majlis Kesyukuran — Atiq &amp; Anis">
+<meta property="og:description" content="Sabtu, 12 Disember 2026 · 12:00 PM – 5:00 PM · Pasir Mas, Kelantan">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nuuralatiqullah-oss.github.io/invitationCard2/">
+<meta property="og:image" content="https://nuuralatiqullah-oss.github.io/invitationCard2/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ms_MY">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Amiri&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────
+   TOKENS
+   ───────────────────────────────────────────── */
+:root{
+  --paper:#EFEDE3;
+  --paper-warm:#F6F4EC;
+  --ink:#16161A;           /* darkened for contrast */
+  --ink-soft:#3E3E3C;      /* darkened for contrast */
+  --gold:#2F5D3E;          /* text-safe deep green accent */
+  --gold-line:#7FA586;     /* decorative green line */
+  --oxblood:#7A2E27;
+  --frame:#2F5D3E;
+  --rule:rgba(22,22,26,.26);
+
+  --display:"Cormorant Garamond",Georgia,serif;
+  --label:"Jost",-apple-system,"Segoe UI",sans-serif;
+  --arabic:"Amiri",serif;
+
+  --pad:clamp(20px,6vw,44px);
+  --bar-h:70px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--label);
+  font-weight:400;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  opacity:.5;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(127,97,40,.07), transparent 55%),
+    radial-gradient(circle at 82% 78%, rgba(122,46,39,.05), transparent 50%);
+}
+
+img,svg{display:block;max-width:100%}
+
+/* ─────────────────────────────────────────────
+   SHEET + FRAME
+   ───────────────────────────────────────────── */
+.sheet{
+  position:relative;
+  z-index:1;
+  max-width:520px;
+  margin:0 auto;
+  padding-bottom:calc(var(--bar-h) + 20px + env(safe-area-inset-bottom));
+}
+
+.frame{
+  position:fixed;
+  inset:9px 9px calc(var(--bar-h) + 9px + env(safe-area-inset-bottom)) 9px;
+  border:1px solid var(--frame);
+  pointer-events:none;
+  z-index:6;
+  max-width:520px;
+  margin:0 auto;
+}
+.frame::after{
+  content:"";
+  position:absolute;
+  inset:5px;
+  border:1px solid rgba(183,154,99,.55);
+}
+
+/* ─────────────────────────────────────────────
+   TYPE ROLES  (all small sizes stepped up)
+   ───────────────────────────────────────────── */
+.eyebrow{
+  font-size:.74rem;
+  font-weight:400;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin:0;
+}
+
+.script{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:500;
+  color:var(--gold);
+  line-height:1.25;
+}
+
+.honorifics{
+  font-size:.95rem;          /* ceiling — JS shrinks it to fit one line */
+  letter-spacing:.035em;
+  color:var(--ink-soft);
+  white-space:nowrap;
+  margin:10px 0;
+}
+
+.body-txt{
+  font-size:.95rem;
+  letter-spacing:.035em;
+  color:var(--ink-soft);
+  max-width:33ch;
+  margin:0 auto;
+}
+
+
+/* ─────────────────────────────────────────────
+   BOTANICAL ARTWORK
+   ───────────────────────────────────────────── */
+.art{
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  user-select:none;
+  opacity:.88;
+}
+.art img{width:100%;height:auto;display:block}
+
+/* cover corners */
+.art--tl{top:-2%;left:-10%;width:48%}
+.art--br{bottom:3%;right:-10%;width:50%}
+.art--bl{bottom:9%;left:-11%;width:38%;opacity:.55}
+
+/* small sprigs peeking in from the edges as you scroll */
+.art--side{width:38%;opacity:.30}
+.art--side img{transition:none;will-change:transform}
+.art--side.l{left:-19%}
+.art--side.r{right:-19%}
+.art--s1{top:6%}
+.art--s2{top:14%}
+.art--s3{top:4%}
+.art--s4{top:18%}
+.art--s5{top:10%}
+.art--s6{top:20%}
+
+@media (min-width:560px){
+  .art--side{width:30%}
+  .art--side.l{left:-13%}
+  .art--side.r{right:-13%}
+  .art--bl{left:-6%;width:30%}
+}
+
+/* section accents, quieter */
+.art--salam{top:15%;right:-22%;width:44%;opacity:.32}
+.art--wish{top:14%;left:-12%;width:40%;opacity:.30;transform:rotate(-20deg)}
+.art--end{top:16%;right:-12%;width:42%;opacity:.34}
+.art--end2{bottom:-2%;left:-10%;width:36%;opacity:.34}
+
+/* butterfly, sized up but sitting quietly behind the text */
+.art--bf1{top:24%;right:0;width:26%;opacity:.55}
+
+@media (min-width:560px){
+  .art--tl{left:-7%;width:38%}
+  .art--br{right:-6%;width:40%}
+  .art--end2{left:-9%;width:26%}
+  .art--bf1{width:17%}
+}
+
+/* ─────────────────────────────────────────────
+   COVER
+   ───────────────────────────────────────────── */
+.cover{
+  position:relative;
+  z-index:0;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  padding:calc(var(--pad) + 14px);
+  overflow:hidden;
+}
+
+.plate{
+  position:relative;
+  z-index:2;
+  width:min(266px,70vw);
+  padding:38px 22px 32px;
+  text-align:center;
+  background:var(--paper-warm);
+  border:1px solid var(--gold-line);
+  outline:1px solid rgba(183,154,99,.6);
+  outline-offset:5px;
+  box-shadow:0 18px 44px -26px rgba(22,22,26,.5);
+}
+
+.monogram{
+  font-family:var(--display);
+  line-height:.82;
+  margin:26px 0 22px;
+  color:var(--ink);
+}
+.monogram .glyph{display:block;font-size:4.6rem;font-weight:300}
+.monogram .glyph:first-child{margin-left:-.34em}
+.monogram .glyph:last-child{margin-left:.34em}
+.monogram .amp{
+  display:block;
+  font-size:2.5rem;
+  font-style:italic;
+  color:var(--gold);
+  margin:-.34em 0;
+}
+
+.flourish{width:52px;margin:0 auto 18px;color:var(--gold-line)}
+
+.plate .names{
+  font-size:1.02rem;
+  font-weight:500;
+  letter-spacing:.2em;
+  margin:0 0 7px;
+}
+.plate .when{
+  font-size:.84rem;
+  letter-spacing:.16em;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+.scroll-cue{
+  position:absolute;
+  bottom:26px;
+  left:0;right:0;
+  z-index:2;
+  text-align:center;
+  font-size:.66rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.scroll-cue span{
+  display:block;
+  width:1px;height:26px;
+  margin:9px auto 0;
+  background:linear-gradient(var(--gold-line),transparent);
+  animation:drift 2.4s ease-in-out infinite;
+}
+@keyframes drift{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ─────────────────────────────────────────────
+   SECTIONS
+   ───────────────────────────────────────────── */
+.panel{position:relative;z-index:0;overflow:hidden;padding:56px var(--pad);text-align:center}
+.panel--tight{padding-top:14px}
+#ucapan{min-height:360px}
+
+.rule{
+  width:100%;max-width:190px;height:1px;
+  margin:34px auto;border:0;
+  background:var(--rule);
+  position:relative;
+}
+.rule::after{
+  content:"❧";
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-52%);
+  background:var(--paper);
+  padding:0 12px;
+  color:var(--gold-line);
+  font-size:.85rem;line-height:1;
+}
+
+.bismillah{
+  font-family:var(--arabic);
+  font-size:1.95rem;
+  margin:0 0 12px;
+  direction:rtl;
+  line-height:1.9;
+}
+
+.hosts{
+  font-size:.94rem;
+  font-weight:500;
+  letter-spacing:.14em;
+  line-height:2.1;
+  margin:26px 0 0;
+}
+.hosts .amp-sm{color:var(--gold);font-family:var(--display);font-style:italic;font-size:1.15rem}
+
+.couple{margin:8px 0 0}
+.couple .name{
+  font-size:2.5rem;      /* ceiling — JS shrinks this to fit if needed */
+  white-space:nowrap;
+  margin:2px 0;
+}
+.couple .heart{margin:10px 0;line-height:1}
+.couple .heart svg{
+  width:16px;height:auto;
+  margin:0 auto;
+  fill:var(--ink);        /* swap for var(--gold) or var(--oxblood) if you prefer */
+  stroke:none;
+}
+
+/* details */
+.detail{display:grid;gap:5px;margin:30px 0}
+.detail dt{
+  font-size:.68rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.detail dd{
+  margin:0;
+  font-size:1rem;
+  font-weight:400;
+  letter-spacing:.09em;
+  line-height:1.7;
+}
+.detail .big-date{
+  font-family:var(--display);
+  font-size:3.7rem;
+  font-weight:400;
+  line-height:1;
+  letter-spacing:0;
+  margin:2px 0 4px;
+}
+.detail .hijri{
+  display:block;
+  font-size:.82rem;
+  letter-spacing:.12em;
+  color:var(--ink-soft);
+  margin-top:7px;
+}
+
+/* aturcara */
+.agenda{list-style:none;margin:26px auto 0;padding:0;max-width:280px;text-align:left}
+.agenda li{
+  display:flex;align-items:baseline;gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid var(--rule);
+}
+.agenda li:last-child{border-bottom:0}
+.agenda time{
+  flex:0 0 84px;
+  font-family:var(--display);
+  font-size:1.15rem;font-weight:500;
+  color:var(--gold);
+  letter-spacing:.02em;
+}
+.agenda p{margin:0;font-size:.85rem;letter-spacing:.13em;text-transform:uppercase}
+
+/* countdown */
+.countdown{display:flex;justify-content:center;gap:6px;margin:28px 0 0}
+.unit{flex:1 1 0;max-width:80px;padding:14px 4px 11px;border:1px solid var(--rule)}
+.unit b{display:block;font-family:var(--display);font-size:1.85rem;font-weight:500;line-height:1}
+.unit small{
+  display:block;margin-top:7px;
+  font-size:.62rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+
+/* contacts */
+.contacts{display:grid;gap:10px;margin:26px 0 0}
+.contact{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:15px 16px;
+  border:1px solid var(--rule);
+  text-decoration:none;color:inherit;
+  background:rgba(246,244,236,.6);
+  transition:border-color .25s ease,background .25s ease;
+}
+.contact:hover,.contact:focus-visible{border-color:var(--gold-line);background:var(--paper-warm)}
+.contact .who{text-align:left}
+.contact .who b{display:block;font-size:.88rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.contact .who small{font-size:.8rem;letter-spacing:.06em;color:var(--ink-soft)}
+.contact .go{color:var(--gold);font-size:1rem}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  width:100%;padding:16px 20px;margin-top:12px;
+  border:1px solid var(--ink);
+  background:transparent;color:var(--ink);
+  font-family:var(--label);
+  font-size:.78rem;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;
+  transition:background .3s ease,color .3s ease;
+}
+.btn:hover,.btn:focus-visible{background:var(--ink);color:var(--paper)}
+.btn--gold{border-color:var(--gold);color:var(--gold)}
+.btn--gold:hover,.btn--gold:focus-visible{background:var(--gold);color:var(--paper-warm)}
+.btn[disabled]{opacity:.5;cursor:default}
+
+/* ─────────────────────────────────────────────
+   RSVP FORM + LIST
+   ───────────────────────────────────────────── */
+.form{display:grid;gap:12px;margin:24px 0 0;text-align:left}
+
+.field label{
+  display:block;
+  font-size:.7rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+.field input,.field textarea,.field select{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid var(--rule);
+  background:var(--paper-warm);
+  color:var(--ink);
+  font-family:var(--label);
+  font-size:.95rem;
+  font-weight:400;
+  letter-spacing:.03em;
+  border-radius:0;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.field textarea{min-height:82px;resize:vertical;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;border-color:var(--gold);background:#fff;
+}
+
+.choice{display:flex;gap:10px}
+.choice button{
+  flex:1;
+  padding:13px 8px;
+  border:1px solid var(--rule);
+  background:var(--paper-warm);
+  color:var(--ink-soft);
+  font-family:var(--label);
+  font-size:.76rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+.choice button[aria-pressed="true"]{
+  border-color:var(--gold);
+  background:var(--gold);
+  color:var(--paper-warm);
+}
+
+.tally{
+  margin:24px 0 4px;
+  font-family:var(--display);
+  font-size:2.9rem;
+  font-weight:500;
+  line-height:1;
+  color:var(--ink);
+}
+.tally-label{
+  font-size:.72rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+.guests{list-style:none;margin:26px 0 0;padding:0;text-align:left;display:grid;gap:1px;background:var(--rule)}
+.guests li{background:var(--paper);padding:15px 4px}
+.guests .g-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.guests .g-name{font-size:.92rem;font-weight:500;letter-spacing:.06em}
+.guests .g-pax{
+  flex:none;
+  font-size:.74rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);
+}
+.guests .g-msg{
+  margin:7px 0 0;
+  font-family:var(--display);
+  font-style:italic;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink-soft);
+}
+
+.note{
+  margin:14px 0 0;
+  font-size:.82rem;
+  letter-spacing:.03em;
+  color:var(--ink-soft);
+}
+.note--warn{color:var(--oxblood)}
+
+/* ─────────────────────────────────────────────
+   HADIAH
+   ───────────────────────────────────────────── */
+.qr-card{
+  margin:26px auto 0;
+  max-width:250px;
+  padding:20px;
+  background:var(--paper-warm);
+  border:1px solid var(--gold-line);
+  outline:1px solid rgba(183,154,99,.45);
+  outline-offset:4px;
+}
+.qr-card img{width:100%;height:auto}
+.qr-cap{
+  margin:14px 0 0;
+  font-size:.74rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.or-sep{
+  margin:26px 0 0;
+  font-family:var(--display);
+  font-style:italic;
+  font-size:1.05rem;
+  color:var(--ink-soft);
+}
+.qr-card[hidden] + .or-sep{display:none}
+
+/* closing */
+.ayat{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:1.25rem;
+  line-height:1.75;
+  color:var(--ink);
+  max-width:26ch;
+  margin:0 auto;
+}
+.ayat-src{
+  margin:16px 0 0;
+  font-size:.7rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+
+.doa-long{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:1.06rem;
+  line-height:1.8;
+  color:var(--ink);
+  max-width:34ch;
+  margin:0 auto;
+}
+
+.doa{
+  font-family:var(--display);
+  font-style:italic;
+  font-size:1.2rem;
+  line-height:1.85;
+  color:var(--ink);
+  max-width:30ch;
+  margin:0 auto;
+}
+.signoff{
+  margin-top:40px;
+  font-size:.68rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+/* ─────────────────────────────────────────────
+   KEHADIRAN + UCAPAN on the scroll
+   ───────────────────────────────────────────── */
+.headcount{
+  margin:26px 0 0;
+  font-family:var(--display);
+  font-size:clamp(4rem,20vw,5.6rem);
+  font-weight:400;
+  line-height:.9;
+  color:var(--ink);
+}
+.headcount-label{
+  margin:8px 0 0;
+  font-size:.74rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+.wishes{
+  list-style:none;
+  margin:28px 0 0;
+  padding:0;
+  text-align:left;
+  display:grid;
+  gap:18px;
+}
+.wishes li{
+  padding:20px 20px 18px;
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  position:relative;
+}
+.wishes li::before{
+  content:"\201C";
+  position:absolute;
+  top:2px;left:14px;
+  font-family:var(--display);
+  font-size:3rem;
+  line-height:1;
+  color:var(--gold-line);
+}
+.wishes blockquote{
+  margin:0;
+  padding-left:22px;
+  font-family:var(--display);
+  font-style:italic;
+  font-size:1.1rem;
+  line-height:1.65;
+  color:var(--ink);
+}
+.wishes figcaption,.wishes .from{
+  display:block;
+  margin:12px 0 0 22px;
+  font-size:.76rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+
+.wishes--collapsed{
+  max-height:430px;
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(#000 68%,transparent);
+  mask-image:linear-gradient(#000 68%,transparent);
+}
+
+/* contact rows inside the Hubungi panel */
+.contact-card{
+  padding:16px;
+  border:1px solid var(--rule);
+  background:rgba(246,244,236,.6);
+  text-align:left;
+}
+.contact-card .who b{
+  display:block;font-size:.92rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.contact-card .who small{
+  display:block;font-size:.82rem;letter-spacing:.06em;color:var(--ink-soft);
+}
+.contact-acts{display:flex;gap:8px;margin-top:12px}
+.contact-acts a{
+  flex:1;
+  padding:11px 6px;
+  text-align:center;text-decoration:none;
+  border:1px solid var(--rule);
+  color:var(--ink);
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  transition:border-color .25s ease,color .25s ease;
+}
+.contact-acts a:hover,.contact-acts a:focus-visible{border-color:var(--gold);color:var(--gold)}
+
+/* map embed */
+.map-embed{
+  margin:22px 0 0;
+  border:1px solid var(--gold-line);
+  outline:1px solid rgba(183,154,99,.45);
+  outline-offset:4px;
+  aspect-ratio:4/3;
+  background:var(--paper-warm);
+}
+.map-embed iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.35) contrast(.95)}
+
+.addr{
+  margin:22px 0 0;
+  font-size:1rem;
+  letter-spacing:.06em;
+  line-height:1.8;
+}
+
+
+
+/* ─────────────────────────────────────────────
+   OPENING GATE  —  cinema curtain split
+   ───────────────────────────────────────────── */
+.gate{
+  position:fixed;
+  inset:0;
+  z-index:40;
+  visibility:visible;
+}
+.gate.done{visibility:hidden}
+
+/* the two halves that part */
+.gate-panel{
+  position:absolute;
+  top:0;bottom:0;
+  width:50.4%;
+  background:var(--paper);
+  transition:transform 1.15s cubic-bezier(.72,0,.2,1);
+  will-change:transform;
+}
+.gate-panel--l{left:0;border-right:1px solid rgba(183,154,99,.5)}
+.gate-panel--r{right:0}
+
+/* a soft edge so the halves read as physical panels as they part */
+.gate-panel::after{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;
+  width:26px;
+  opacity:0;
+  transition:opacity .5s ease .18s;
+}
+.gate-panel--l::after{right:0;background:linear-gradient(90deg,transparent,rgba(22,22,26,.16))}
+.gate-panel--r::after{left:0;background:linear-gradient(270deg,transparent,rgba(22,22,26,.16))}
+.gate.open .gate-panel::after{opacity:1}
+
+.gate.open .gate-panel--l{transform:translateX(-100.5%)}
+.gate.open .gate-panel--r{transform:translateX(100.5%)}
+
+/* content sits above the seam and clears out first */
+.gate-inner{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding:calc(var(--pad) + 14px);
+  text-align:center;
+  transition:opacity .5s ease,transform .7s cubic-bezier(.3,.7,.3,1);
+}
+.gate.open .gate-inner{opacity:0;transform:scale(.93);pointer-events:none}
+
+/* the frame, drawn over both halves, fades with the content */
+.gate-frame{
+  position:absolute;
+  inset:9px;
+  max-width:520px;
+  margin:0 auto;
+  border:1px solid var(--frame);
+  pointer-events:none;
+}
+.gate-frame::after{
+  content:"";
+  position:absolute;
+  inset:5px;
+  border:1px solid rgba(183,154,99,.55);
+}
+
+.gate .monogram{margin:0 0 44px}
+.gate .monogram .glyph{font-size:5rem}
+.gate .monogram .amp{font-size:2.7rem}
+
+.gate-open{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 34px;
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold);
+  font-family:var(--label);
+  font-size:.76rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background .35s ease,color .35s ease;
+}
+.gate-open:hover,.gate-open:focus-visible{background:var(--gold);color:var(--paper-warm)}
+.gate-open svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.4}
+
+.gate-hint{
+  margin:20px 0 0;
+  font-size:.66rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+body.gated{overflow:hidden}
+body.gated .enter{animation-play-state:paused}
+
+/* ─────────────────────────────────────────────
+   FALLING PETALS
+   ───────────────────────────────────────────── */
+.petals{
+  position:fixed;
+  inset:0;
+  z-index:4;
+  pointer-events:none;
+  overflow:hidden;
+}
+.petal{
+  position:absolute;
+  top:-14vh;
+  color:var(--ink);
+  opacity:0;
+  will-change:transform;
+  animation:fall linear infinite;
+}
+.petal svg{width:100%;height:auto;stroke:currentColor;fill:none;stroke-width:1.4;
+           stroke-linejoin:round;stroke-linecap:round;
+           vector-effect:non-scaling-stroke}
+.petal svg .f{fill:currentColor;stroke:none}
+.petal .sway{display:block;animation:sway ease-in-out infinite alternate}
+
+@keyframes fall{
+  0%   {transform:translateY(0) rotate(0deg);opacity:0}
+  8%   {opacity:var(--peak)}
+  92%  {opacity:var(--peak)}
+  100% {transform:translateY(128vh) rotate(var(--spin));opacity:0}
+}
+@keyframes sway{
+  from{transform:translateX(calc(var(--drift) * -1))}
+  to  {transform:translateX(var(--drift))}
+}
+
+/* ─────────────────────────────────────────────
+   MUSIC TOGGLE
+   ───────────────────────────────────────────── */
+.music{
+  position:fixed;
+  top:22px;
+  right:calc(50% - 260px + 22px);
+  z-index:10;
+  width:44px;height:44px;
+  display:grid;place-items:center;
+  border:1px solid var(--gold-line);
+  background:var(--paper-warm);
+  color:var(--gold);
+  cursor:pointer;
+  border-radius:50%;
+  padding:0;
+  box-shadow:0 4px 14px -8px rgba(22,22,26,.6);
+  transition:color .25s ease,border-color .25s ease;
+}
+@media (max-width:559px){
+  .music{right:22px}
+}
+.music:hover,.music:focus-visible{color:var(--ink);border-color:var(--gold)}
+
+.music .bars{display:flex;align-items:flex-end;gap:2.5px;height:15px}
+.music .bars i{
+  display:block;
+  width:2.5px;
+  background:currentColor;
+  height:5px;
+  transform-origin:bottom;
+}
+.music[aria-pressed="true"] .bars i{animation:eq .9s ease-in-out infinite}
+.music[aria-pressed="true"] .bars i:nth-child(2){animation-delay:.18s}
+.music[aria-pressed="true"] .bars i:nth-child(3){animation-delay:.36s}
+.music[aria-pressed="true"] .bars i:nth-child(4){animation-delay:.09s}
+@keyframes eq{
+  0%,100%{height:4px}
+  50%{height:15px}
+}
+/* paused: a flat line with a slash through it */
+.music .slash{display:none}
+.music[aria-pressed="false"] .slash{display:block}
+
+/* ─────────────────────────────────────────────
+   TAB PANELS  (opened from the bar)
+   ───────────────────────────────────────────── */
+.scrim{
+  position:fixed;inset:0;z-index:20;
+  background:rgba(22,22,26,.5);
+  opacity:0;visibility:hidden;
+  transition:opacity .3s ease,visibility .3s;
+  -webkit-backdrop-filter:blur(2px);
+  backdrop-filter:blur(2px);
+}
+.scrim.open{opacity:1;visibility:visible}
+
+.tabpanel{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  z-index:21;
+  max-width:520px;
+  margin:0 auto;
+  max-height:88svh;
+  display:flex;
+  flex-direction:column;
+  background:var(--paper);
+  border-top:1px solid var(--frame);
+  transform:translateY(101%);
+  transition:transform .38s cubic-bezier(.22,.75,.3,1);
+  visibility:hidden;
+}
+.tabpanel.open{transform:translateY(0);visibility:visible}
+
+.tabpanel::before{
+  content:"";
+  position:absolute;
+  inset:5px 5px 0 5px;
+  border:1px solid rgba(183,154,99,.55);
+  border-bottom:0;
+  pointer-events:none;
+}
+
+.tab-head{
+  flex:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:20px var(--pad) 14px;
+  border-bottom:1px solid var(--rule);
+}
+.tab-head h2{
+  margin:0;
+  font-family:var(--label);
+  font-size:.78rem;
+  font-weight:400;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.tab-close{
+  flex:none;
+  width:38px;height:38px;
+  display:grid;place-items:center;
+  border:1px solid var(--rule);
+  background:transparent;
+  color:var(--ink);
+  font-size:1.1rem;
+  line-height:1;
+  cursor:pointer;
+  transition:border-color .25s ease,color .25s ease;
+}
+.tab-close:hover,.tab-close:focus-visible{border-color:var(--gold);color:var(--gold)}
+
+.tab-body{
+  flex:1 1 auto;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;
+  padding:22px var(--pad) calc(30px + env(safe-area-inset-bottom));
+  text-align:center;
+}
+
+body.locked{overflow:hidden}
+
+/* ─────────────────────────────────────────────
+   ACTION BAR
+   ───────────────────────────────────────────── */
+.bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:8;
+  max-width:520px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(5,1fr);
+  background:var(--paper-warm);
+  border-top:1px solid var(--frame);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.bar a,.bar button{
+  padding:13px 2px 12px;
+  text-align:center;text-decoration:none;
+  background:transparent;
+  border:0;
+  border-right:1px solid var(--rule);
+  color:var(--ink);
+  font-family:var(--label);
+  font-size:.62rem;
+  font-weight:400;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:color .2s ease;
+}
+.bar > :last-child{border-right:0}
+.bar a:hover,.bar a:focus-visible,
+.bar button:hover,.bar button:focus-visible{color:var(--gold)}
+.bar svg{width:18px;height:18px;margin:0 auto 5px;stroke:currentColor;fill:none;stroke-width:1.3}
+
+/* ─────────────────────────────────────────────
+   MOTION
+   ───────────────────────────────────────────── */
+
+/* staggered reveal — every element rises and fades in */
+.reveal{
+  opacity:0;
+  transform:translateY(96px) scale(.86);
+  transition:opacity 2s cubic-bezier(.12,1,.25,1),
+             transform 2.2s cubic-bezier(.12,.98,.22,1);
+  will-change:opacity,transform;
+}
+.reveal.in{opacity:1;transform:none}
+
+
+/* soft fade where content meets the frame, top and bottom */
+.edge{
+  position:fixed;
+  left:0;right:0;
+  height:74px;
+  max-width:520px;
+  margin:0 auto;
+  pointer-events:none;
+  z-index:5;
+}
+.edge--top{
+  top:0;
+  background:linear-gradient(var(--paper) 24%,rgba(239,237,227,0));
+}
+.edge--bottom{
+  bottom:calc(var(--bar-h) + env(safe-area-inset-bottom));
+  background:linear-gradient(rgba(239,237,227,0),var(--paper) 76%);
+}
+
+/* scroll progress hairline */
+.progress{
+  position:fixed;
+  top:0;left:0;
+  height:2px;
+  width:0;
+  background:linear-gradient(90deg,var(--gold-line),var(--gold));
+  z-index:9;
+  transition:width .12s linear;
+}
+
+/* cover parallax wrapper */
+.plate-wrap{
+  position:relative;
+  z-index:2;
+  will-change:transform,opacity;
+}
+
+.enter{opacity:0;animation:enter 1.15s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes enter{to{opacity:1;transform:none}}
+.enter--plate{transform:scale(.96)}
+.d1{animation-delay:.15s}.d2{animation-delay:.5s}.d3{animation-delay:.75s}
+
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+
+@media (prefers-reduced-motion:reduce){
+  /* "Reduce Motion" is a request for less movement, not less clarity.
+     Cross-fades stay; anything that travels across the screen goes. */
+  .reveal{transform:none!important;transition:opacity .7s ease!important}
+  .enter{animation-name:fadeOnly!important}
+  .enter--plate,.enter--bot{transform:none!important}
+  .plate-wrap{transform:none!important;opacity:1!important}
+  .art--side img{transform:none!important}
+  .scroll-cue span{animation:none!important}
+  .music .bars i{animation:none!important;height:9px!important}
+  .petals{display:none}
+  .gate-panel,.gate-inner{transition:none!important}
+  .progress{display:none}
+}
+
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+@media (min-width:560px){
+  .frame{inset:16px 16px calc(var(--bar-h) + 16px) 16px}
+}
+</style>
+</head>
+<body>
+
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<div class="gate" id="gate" role="dialog" aria-label="Buka kad jemputan">
+  <div class="gate-panel gate-panel--l" aria-hidden="true"></div>
+  <div class="gate-panel gate-panel--r" aria-hidden="true"></div>
+
+  <div class="gate-inner">
+    <div class="gate-frame" aria-hidden="true"></div>
+    <div class="monogram" aria-label="A dan A">
+      <span class="glyph">A</span>
+      <span class="amp">&amp;</span>
+      <span class="glyph">A</span>
+    </div>
+
+    <button class="gate-open" id="gateOpen" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 8l8-4 8 4v12l-8 4-8-4z" stroke-linejoin="round"/>
+        <path d="M4 8l8 4 8-4M12 12v12"/>
+      </svg>
+      Buka Kad
+    </button>
+
+    <p class="gate-hint">Sila buka untuk meneruskan</p>
+  </div>
+</div>
+
+<div class="frame" aria-hidden="true"></div>
+<div class="edge edge--top" aria-hidden="true"></div>
+<div class="edge edge--bottom" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<audio id="bgm" loop preload="none">
+  <source src="music/lagu.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" id="musicBtn" type="button"
+        aria-pressed="false" aria-label="Main atau henti muzik latar" hidden>
+  <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <svg class="slash" viewBox="0 0 24 24" aria-hidden="true"
+       style="position:absolute;width:26px;height:26px;stroke:currentColor;stroke-width:1.3;fill:none">
+    <path d="M4 20L20 4"/>
+  </svg>
+</button>
+
+<main class="sheet">
+
+  <!-- ══════════ COVER ══════════ -->
+  <section class="cover">
+    <div class="art art--tl enter d1" aria-hidden="true">
+      <img style="width:121.42%;max-width:none;margin:-17.66% 0 0.00% -18.81%" src="art/corner-tl.svg" alt="" width="1162" height="1561" fetchpriority="high">
+    </div>
+    <div class="art art--br enter d1" aria-hidden="true">
+      <img style="width:125.89%;max-width:none;margin:0.00% 0 -19.87% -10.71%" src="art/corner-br.svg" alt="" width="1128" height="1675" fetchpriority="high">
+    </div>
+    <div class="art art--bl" aria-hidden="true">
+      <img src="art/butterfly-a.svg" alt="" width="914" height="1082" fetchpriority="high">
+    </div>
+
+    <div class="plate-wrap">
+      <div class="plate enter enter--plate d2">
+      <p class="eyebrow">Majlis Kesyukuran</p>
+
+      <div class="monogram" aria-label="A dan A">
+        <span class="glyph">A</span>
+        <span class="amp">&amp;</span>
+        <span class="glyph">A</span>
+      </div>
+
+      <svg class="flourish" viewBox="0 0 60 10" fill="none" stroke="currentColor" stroke-width=".9" aria-hidden="true">
+        <path d="M2 5 H20 M40 5 H58"/>
+        <path d="M20 5 C24 1 27 1 30 5 C33 9 36 9 40 5 C36 1 33 1 30 5 C27 9 24 9 20 5Z"/>
+      </svg>
+
+      <p class="names">ATIQ &amp; ANIS</p>
+      <p class="when">SABTU &nbsp;|&nbsp; 12.12.2026</p>
+      </div>
+    </div>
+
+    <p class="scroll-cue enter d3">Tatal ke bawah<span></span></p>
+  </section>
+
+  <!-- ══════════ AYAT ══════════ -->
+  <section class="panel">
+    <p class="ayat">&ldquo;Dan Kami menciptakan kamu berpasang-pasangan&rdquo;</p>
+    <p class="ayat-src">Surah An-Naba&rsquo; &middot; 78:8</p>
+  </section>
+
+  <!-- ══════════ SALAM ══════════ -->
+  <section class="panel">
+    <div class="art art--salam" aria-hidden="true" style="transform:scaleX(-1)">
+      <img style="width:104.58%;max-width:none;margin:0.00% 0 0.00% -4.58%" src="art/leaf-a.svg" alt="" width="1187" height="1090" loading="lazy">
+    </div>
+    <div class="art art--side l art--s6" aria-hidden="true">
+      <img style="width:125.33%;max-width:none;margin:0.00% 0 0.00% -25.33%" src="art/leaf-d.svg" alt="" width="1133" height="1441" loading="lazy">
+    </div>
+
+    <p class="bismillah">السلام عليكم</p>
+    <p class="eyebrow">Assalamualaikum dan Selamat Sejahtera</p>
+    <p class="body-txt" style="margin-top:14px">
+      Dengan nama Allah yang Maha Pengasih lagi Maha Penyayang
+    </p>
+
+    <p class="hosts">
+      RAHAIMI BIN ZAKARIA<br>
+      <span class="amp-sm">&amp;</span><br>
+      ZAKIAH BINTI TAIB
+    </p>
+
+    <hr class="rule">
+
+    <p class="body-txt">Dengan penuh rasa kesyukuran, kami ingin menjemput</p>
+
+    <p class="honorifics" id="honorifics">Dato&rsquo; | Datin | Tuan | Puan | Encik | Cik</p>
+
+    <p class="body-txt">ke majlis perkahwinan anakanda kami</p>
+
+    <div class="couple">
+      <p class="script name">Nuural Atiqullah Bin Rahaimi</p>
+      <p class="heart" aria-hidden="true">
+        <svg viewBox="0 0 24 22"><path d="M12 21C12 21 1.5 14.2 1.5 7.6C1.5 4.2 4.1 1.8 7.1 1.8C9.2 1.8 11.1 3 12 4.7C12.9 3 14.8 1.8 16.9 1.8C19.9 1.8 22.5 4.2 22.5 7.6C22.5 14.2 12 21 12 21Z"/></svg>
+      </p>
+      <p class="script name">Anis Norliyana Binti Hazizun</p>
+    </div>
+  </section>
+
+  <!-- ══════════ BUTIRAN ══════════ -->
+  <section class="panel panel--tight">
+    <hr class="rule">
+
+    <div class="art art--side l art--s1" aria-hidden="true" style="transform:rotate(-24deg)">
+      <img style="width:119.42%;max-width:none;margin:0.00% 0 0.00% -19.42%" src="art/leaf-c.svg" alt="" width="1156" height="1159" loading="lazy">
+    </div>
+
+    <dl class="detail">
+      <dt>Tarikh</dt>
+      <dd>
+        SABTU
+        <span class="big-date">12</span>
+        DISEMBER 2026
+        <span class="hijri" id="hijri">3 Rejab 1448H</span>
+      </dd>
+    </dl>
+
+    <dl class="detail">
+      <dt>Masa</dt>
+      <dd>12:00 PM &ndash; 5:00 PM</dd>
+    </dl>
+
+    <dl class="detail">
+      <dt>Lokasi</dt>
+      <dd>
+        Dewan Majlis Ghumoh Mek<br>
+        Kampung Banggol Chicha<br>
+        17000 Pasir Mas, Kelantan
+      </dd>
+    </dl>
+
+    <a class="btn btn--gold" id="mapBtn" href="#" target="_blank" rel="noopener">Buka lokasi dalam peta</a>
+  </section>
+
+  <!-- ══════════ ATURCARA ══════════ -->
+  <section class="panel panel--tight">
+    <hr class="rule">
+    <div class="art art--side r art--s2" aria-hidden="true" style="transform:scaleX(-1)">
+      <img style="width:113.39%;max-width:none;margin:-0.75% 0 0.00% -13.39%" src="art/leaf-b.svg" alt="" width="1211" height="1082" loading="lazy">
+    </div>
+
+    <p class="eyebrow">Aturcara Majlis</p>
+
+    <ol class="agenda">
+      <li><time>12:00 PM</time><p>Ketibaan tetamu</p></li>
+      <li><time>5:00 PM</time><p>Majlis bersurai</p></li>
+    </ol>
+  </section>
+
+  <!-- ══════════ COUNTDOWN ══════════ -->
+  <section class="panel panel--tight">
+    <hr class="rule">
+    <div class="art art--side l art--s3" aria-hidden="true">
+      <img style="width:104.58%;max-width:none;margin:0.00% 0 0.00% -4.58%" src="art/leaf-a.svg" alt="" width="1187" height="1090" loading="lazy">
+    </div>
+    <div class="art art--bf1" aria-hidden="true" style="transform:rotate(-10deg)">
+      <img src="art/butterfly-b.svg" alt="" width="1536" height="1024" loading="lazy">
+    </div>
+
+    <p class="eyebrow">Majlis akan bermula</p>
+
+    <div class="countdown" id="countdown" role="timer">
+      <div class="unit"><b data-cd="d">—</b><small>Hari</small></div>
+      <div class="unit"><b data-cd="h">—</b><small>Jam</small></div>
+      <div class="unit"><b data-cd="m">—</b><small>Minit</small></div>
+      <div class="unit"><b data-cd="s">—</b><small>Saat</small></div>
+    </div>
+
+    <a class="btn" id="icsBtn" href="#" download="Atiq-Anis-12Dis2026.ics">Simpan ke kalendar</a>
+  </section>
+
+  <!-- ══════════ KEHADIRAN ══════════ -->
+  <section class="panel panel--tight" id="kehadiran">
+    <hr class="rule">
+    <div class="art art--side r art--s4" aria-hidden="true" style="transform:scaleX(-1)">
+      <img style="width:119.42%;max-width:none;margin:0.00% 0 0.00% -19.42%" src="art/leaf-c.svg" alt="" width="1156" height="1159" loading="lazy">
+    </div>
+    <div class="art art--side l art--s5" aria-hidden="true">
+      <img style="width:113.47%;max-width:none;margin:0.00% 0 0.00% -13.47%" src="art/leaf-e.svg" alt="" width="918" height="956" loading="lazy">
+    </div>
+
+    <p class="eyebrow">Kehadiran</p>
+
+    <p class="headcount" id="headcount">—</p>
+    <p class="headcount-label" id="headcountLabel">orang telah mengesahkan</p>
+
+    <button class="btn btn--gold" type="button" data-open="tabRsvp">Sahkan kehadiran anda</button>
+  </section>
+
+  <!-- ══════════ UCAPAN ══════════ -->
+  <section class="panel panel--tight" id="ucapan">
+    <hr class="rule">
+    <div class="art art--wish" aria-hidden="true">
+      <img style="width:113.39%;max-width:none;margin:-0.75% 0 0.00% -13.39%" src="art/leaf-b.svg" alt="" width="1211" height="1082" loading="lazy">
+    </div>
+
+    <p class="eyebrow">Ucapan</p>
+
+    <ul class="wishes" id="wishes"></ul>
+    <p class="note" id="wishNote" hidden></p>
+
+    <button class="btn" type="button" id="moreWishes" hidden>Lihat semua ucapan</button>
+  </section>
+
+  <!-- ══════════ PENUTUP ══════════ -->
+  <section class="panel">
+    <hr class="rule">
+    <div class="art art--end" aria-hidden="true" style="transform:scaleX(-1)">
+      <img style="width:119.42%;max-width:none;margin:0.00% 0 0.00% -19.42%" src="art/leaf-c.svg" alt="" width="1156" height="1159" loading="lazy">
+    </div>
+    <div class="art art--end2" aria-hidden="true">
+      <img style="width:125.33%;max-width:none;margin:0.00% 0 0.00% -25.33%" src="art/leaf-d.svg" alt="" width="1133" height="1441" loading="lazy">
+    </div>
+
+    <p class="doa-long">
+      Ya Allah, berkatilah majlis perkahwinan mereka. Satukanlah hati kedua
+      mempelai ini sebagaimana Engkau satukan hati Adam &amp; Hawa, dan
+      sebagaimana Engkau satukan hati Muhammad S.A.W &amp; Siti Khadijah.
+      Semoga Allah S.W.T memberkati mereka serta menghimpunkan mereka
+      kebaikan dan keberkatan di dunia dan di akhirat.
+    </p>
+
+    <hr class="rule">
+
+    <p class="doa">
+      Semoga dengan kehadiran para hadirin akan memeriahkan lagi majlis ini
+      &amp; mendapat keberkatanNya.
+    </p>
+    <p class="signoff">Atiq &amp; Anis &middot; 12.12.2026</p>
+  </section>
+
+</main>
+
+<!-- ══════════ TAB: RSVP ══════════ -->
+<div class="scrim" id="scrim" hidden></div>
+
+<section class="tabpanel" id="tabRsvp" role="dialog" aria-modal="true" aria-labelledby="hRsvp" aria-hidden="true">
+  <header class="tab-head">
+    <h2 id="hRsvp">Sahkan Kehadiran</h2>
+    <button class="tab-close" type="button" data-close aria-label="Tutup">&#10005;</button>
+  </header>
+
+  <div class="tab-body">
+    <p class="tally" id="tally">—</p>
+    <p class="tally-label">orang telah mengesahkan</p>
+
+    <div class="form">
+      <div class="field">
+        <label for="rNama">Nama</label>
+        <input id="rNama" type="text" autocomplete="name" placeholder="Nama penuh anda">
+      </div>
+
+      <div class="field">
+        <label for="rPax">Bilangan hadir</label>
+        <input id="rPax" type="number" min="1" max="30" value="1" inputmode="numeric">
+      </div>
+
+      <div class="field">
+        <label id="lblHadir">Kehadiran</label>
+        <div class="choice" role="group" aria-labelledby="lblHadir">
+          <button type="button" id="btnYes" aria-pressed="true">Hadir</button>
+          <button type="button" id="btnNo" aria-pressed="false">Tidak hadir</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="rUcap">Ucapan <span style="text-transform:none;letter-spacing:.02em">(pilihan)</span></label>
+        <textarea id="rUcap" maxlength="220" placeholder="Doa dan ucapan untuk pengantin"></textarea>
+      </div>
+
+      <button class="btn btn--gold" id="rSend" type="button">Hantar</button>
+      <p class="note" id="rNote" hidden></p>
+    </div>
+
+    <ul class="guests" id="guests" aria-live="polite"></ul>
+    <p class="note" id="listNote" hidden>Belum ada pengesahan. Jadilah yang pertama.</p>
+  </div>
+</section>
+
+<!-- ══════════ TAB: HADIAH ══════════ -->
+<section class="tabpanel" id="tabHadiah" role="dialog" aria-modal="true" aria-labelledby="hHadiah" aria-hidden="true">
+  <header class="tab-head">
+    <h2 id="hHadiah">Hadiah</h2>
+    <button class="tab-close" type="button" data-close aria-label="Tutup">&#10005;</button>
+  </header>
+
+  <div class="tab-body">
+    <p class="body-txt">
+      Kehadiran anda sudah cukup bermakna. Jika ingin menghulurkan sedikit tanda kasih,
+      anda boleh memilih salah satu cara di bawah.
+    </p>
+
+    <!-- shown only once qr-hadiah.png exists next to this file -->
+    <div class="qr-card" id="qrCard" hidden>
+      <img id="qrImg" src="qr-hadiah.png" alt="Kod QR untuk pemberian hadiah">
+      <p class="qr-cap">Imbas kod QR</p>
+    </div>
+
+    <p class="or-sep" aria-hidden="true">atau</p>
+
+    <a class="btn btn--gold" href="https://collshp.com/ideahadiahkahwin?share_channel_code=1&view=storefront" target="_blank" rel="noopener">Lihat Senarai Hadiah</a>
+  </div>
+</section>
+
+<!-- ══════════ TAB: HUBUNGI ══════════ -->
+<section class="tabpanel" id="tabHubungi" role="dialog" aria-modal="true" aria-labelledby="hHubungi" aria-hidden="true">
+  <header class="tab-head">
+    <h2 id="hHubungi">Untuk Dihubungi</h2>
+    <button class="tab-close" type="button" data-close aria-label="Tutup">&#10005;</button>
+  </header>
+
+  <div class="tab-body">
+    <p class="body-txt">
+      Sebarang pertanyaan mengenai majlis, sila hubungi mana-mana wakil keluarga di bawah.
+    </p>
+
+    <div class="contacts">
+      <div class="contact-card">
+        <span class="who"><b>Hj Rahaimi</b><small>Ayah pengantin lelaki &middot; 014-710 1959</small></span>
+        <div class="contact-acts">
+          <a href="tel:+60147101959">Panggil</a>
+          <a href="https://wa.me/60147101959" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <span class="who"><b>Hjh Zakiah</b><small>Ibu pengantin lelaki &middot; 019-982 1344</small></span>
+        <div class="contact-acts">
+          <a href="tel:+60199821344">Panggil</a>
+          <a href="https://wa.me/60199821344" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <span class="who"><b>Atiq</b><small>Pengantin lelaki &middot; 019-977 6999</small></span>
+        <div class="contact-acts">
+          <a href="tel:+60199776999">Panggil</a>
+          <a href="https://wa.me/60199776999" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TAB: LOKASI ══════════ -->
+<section class="tabpanel" id="tabLokasi" role="dialog" aria-modal="true" aria-labelledby="hLokasi" aria-hidden="true">
+  <header class="tab-head">
+    <h2 id="hLokasi">Lokasi Majlis</h2>
+    <button class="tab-close" type="button" data-close aria-label="Tutup">&#10005;</button>
+  </header>
+
+  <div class="tab-body">
+    <p class="addr">
+      Dewan Majlis Ghumoh Mek<br>
+      Kampung Banggol Chicha<br>
+      17000 Pasir Mas, Kelantan
+    </p>
+
+    <div class="map-embed">
+      <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Peta lokasi majlis"></iframe>
+    </div>
+
+    <a class="btn btn--gold" id="gmapBtn" href="#" target="_blank" rel="noopener">Buka dalam Google Maps</a>
+    <a class="btn" id="wazeBtn" href="#" target="_blank" rel="noopener">Buka dalam Waze</a>
+    <button class="btn" type="button" id="copyAddr">Salin alamat</button>
+    <p class="note" id="copyNote" hidden></p>
+  </div>
+</section>
+
+<!-- ══════════ ACTION BAR ══════════ -->
+<nav class="bar" aria-label="Tindakan pantas">
+  <button type="button" data-open="tabHubungi" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z" stroke-linejoin="round"/></svg>
+    Hubungi
+  </button>
+  <a href="#" id="barIcs">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+    Kalendar
+  </a>
+  <button type="button" data-open="tabRsvp" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" stroke-linejoin="round"/><path d="M4 7l8 6 8-6"/></svg>
+    RSVP
+  </button>
+  <button type="button" data-open="tabHadiah" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 12h18M12 8v13"/><path d="M12 8S9.5 3.5 7.5 4.5 8 8 12 8zM12 8s2.5-4.5 4.5-3.5S16 8 12 8z"/></svg>
+    Hadiah
+  </button>
+  <button type="button" data-open="tabLokasi" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
+    Lokasi
+  </button>
+</nav>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   TUKAR DI SINI — the only lines you need to edit
+   ═══════════════════════════════════════════════════════ */
+const VENUE   = "Dewan Majlis Ghumoh Mek, Kampung Banggol Chicha, 17000 Pasir Mas, Kelantan";
+const MAP_URL = "https://share.google/eET0FxJhdxPXbMpYc";
+const PIN     = "";   // optional exact "lat,lng" for the Waze pin; blank = search by MAP_QUERY
+const MAP_QUERY = "Homestay Ghumoh Mek, Banggol Chicha, 17000 Pasir Mas, Kelantan";   // name Google Maps knows the venue by
+const RSVP_WA = "60199821344";    // fallback WhatsApp number
+const WHEN    = "2026-12-12T12:00:00+08:00";
+const ENDS    = "2026-12-12T17:00:00+08:00";
+const HIJRI   = "3 Rejab 1448H";   // moon-sighting can shift this by a day
+
+// Paste your Google Apps Script /exec URL here to turn on the live
+// attendee list. Leave empty and RSVP falls back to WhatsApp.
+const RSVP_API = "https://script.google.com/macros/s/AKfycbxb9e1e-ciJgzefRlWqGrmu0ZXK-HHNEJiCM_Y8y5QqYK3wp5WIdIWnCpdwJ1Zd_J-1/exec";
+// Same Google Sheet as the first card, but its own tab (see rsvp-backend.gs).
+const RSVP_TAB = "RSVP2";
+/* ═══════════════════════════════════════════════════════ */
+
+const $ = id => document.getElementById(id);
+
+$("hijri").textContent = HIJRI;
+
+/* — maps — */
+const mapHref  = MAP_URL || "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(VENUE);
+const wazeHref = PIN
+  ? "https://waze.com/ul?ll=" + PIN + "&navigate=yes"
+  : "https://waze.com/ul?q=" + encodeURIComponent(MAP_QUERY) + "&navigate=yes";
+
+$("mapBtn").href  = mapHref;
+$("gmapBtn").href = mapHref;
+$("wazeBtn").href = wazeHref;
+
+// embedded preview — loads only when the Lokasi panel is first opened
+let mapLoaded = false;
+function loadMap(){
+  if (mapLoaded) return;
+  const q = PIN || MAP_QUERY;
+  $("mapFrame").src = "https://maps.google.com/maps?q=" + encodeURIComponent(q) + "&z=17&output=embed";
+  mapLoaded = true;
+}
+
+$("copyAddr").addEventListener("click", async () => {
+  const note = $("copyNote");
+  try {
+    await navigator.clipboard.writeText(VENUE);
+    note.textContent = "Alamat telah disalin.";
+    note.classList.remove("note--warn");
+  } catch {
+    note.textContent = "Salin gagal. Sila salin alamat di atas secara manual.";
+    note.classList.add("note--warn");
+  }
+  note.hidden = false;
+});
+
+/* — gift QR: appears only once the image file is actually there — */
+const qrImg = $("qrImg");
+function syncQr(){ $("qrCard").hidden = !(qrImg.complete && qrImg.naturalWidth > 0); }
+qrImg.addEventListener("load", syncQr);
+qrImg.addEventListener("error", syncQr);
+syncQr();
+
+/* — countdown — */
+const target = new Date(WHEN).getTime();
+const cd = {
+  d: document.querySelector('[data-cd="d"]'),
+  h: document.querySelector('[data-cd="h"]'),
+  m: document.querySelector('[data-cd="m"]'),
+  s: document.querySelector('[data-cd="s"]')
+};
+const pad = n => String(n).padStart(2, "0");
+
+let timer;
+function tick(){
+  const gap = target - Date.now();
+  if (gap <= 0){
+    $("countdown").innerHTML = '<p class="doa" style="font-size:1.05rem">Alhamdulillah, majlis telah berlangsung.</p>';
+    clearInterval(timer);
+    return;
+  }
+  const s = Math.floor(gap / 1000);
+  cd.d.textContent = Math.floor(s / 86400);
+  cd.h.textContent = pad(Math.floor(s / 3600) % 24);
+  cd.m.textContent = pad(Math.floor(s / 60) % 60);
+  cd.s.textContent = pad(s % 60);
+}
+tick();
+timer = setInterval(tick, 1000);
+
+/* — calendar file — */
+const stamp = iso => new Date(iso).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+const ics = [
+  "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Atiq dan Anis//Kad Digital//MS",
+  "BEGIN:VEVENT","UID:atiq-anis-12122026@kad",
+  "DTSTAMP:" + stamp(new Date().toISOString()),
+  "DTSTART:" + stamp(WHEN),
+  "DTEND:" + stamp(ENDS),
+  "SUMMARY:Majlis Kesyukuran Atiq & Anis",
+  "LOCATION:" + VENUE.replace(/,/g, "\\,"),
+  "DESCRIPTION:Majlis Kesyukuran Nuural Atiqullah & Anis Norliyana",
+  "BEGIN:VALARM","TRIGGER:-P1D","ACTION:DISPLAY",
+  "DESCRIPTION:Majlis Atiq & Anis esok","END:VALARM",
+  "END:VEVENT","END:VCALENDAR"
+].join("\r\n");
+
+const icsHref = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+$("icsBtn").href = icsHref;
+$("barIcs").href = icsHref;
+$("barIcs").setAttribute("download", "Atiq-Anis-12Dis2026.ics");
+
+/* ═══════════════════════════════════════════════════════
+   RSVP
+   ═══════════════════════════════════════════════════════ */
+let attending = true;
+
+$("btnYes").addEventListener("click", () => setChoice(true));
+$("btnNo").addEventListener("click", () => setChoice(false));
+
+function setChoice(v){
+  attending = v;
+  $("btnYes").setAttribute("aria-pressed", String(v));
+  $("btnNo").setAttribute("aria-pressed", String(!v));
+  $("rPax").disabled = !v;
+}
+
+function say(msg, warn){
+  const n = $("rNote");
+  n.textContent = msg;
+  n.hidden = false;
+  n.classList.toggle("note--warn", !!warn);
+}
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g, c =>
+    ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+}
+
+function render(rows){
+  const going = rows.filter(r => r.hadir);
+  const total = going.reduce((sum, r) => sum + (Number(r.pax) || 1), 0);
+
+  $("tally").textContent = total;
+  $("headcount").textContent = total;
+
+  // attendee list inside the RSVP panel
+  $("guests").innerHTML = rows.map(r => `
+    <li>
+      <div class="g-top">
+        <span class="g-name">${esc(r.nama)}</span>
+        <span class="g-pax">${r.hadir ? (Number(r.pax) || 1) + " org" : "Tidak hadir"}</span>
+      </div>
+      ${r.ucapan ? `<p class="g-msg">&ldquo;${esc(r.ucapan)}&rdquo;</p>` : ""}
+    </li>`).join("");
+
+  $("listNote").hidden = rows.length > 0;
+
+  // wishing wall on the scroll
+  const withMsg = rows.filter(r => r.ucapan && r.ucapan.trim());
+  const wall = $("wishes");
+
+  wall.innerHTML = withMsg.map(r => `
+    <li>
+      <blockquote>${esc(r.ucapan)}</blockquote>
+      <span class="from">${esc(r.nama)}</span>
+    </li>`).join("");
+
+  $("wishNote").hidden = withMsg.length > 0;
+  $("wishNote").textContent = "Belum ada ucapan. Tinggalkan yang pertama melalui borang RSVP.";
+
+  const many = withMsg.length > 3;
+  $("moreWishes").hidden = !many;
+  wall.classList.toggle("wishes--collapsed", many);
+  $("moreWishes").textContent = "Lihat semua ucapan";
+}
+
+$("moreWishes").addEventListener("click", () => {
+  const wall = $("wishes");
+  const collapsed = wall.classList.toggle("wishes--collapsed");
+  $("moreWishes").textContent = collapsed ? "Lihat semua ucapan" : "Tunjukkan kurang";
+});
+
+/* true only after the backend has confirmed it understands per-card tabs.
+   Until the updated Apps Script is deployed it stays false, so this card never
+   reads or writes the first card's guest list by mistake. */
+let backendReady = false;
+
+async function loadList(){
+  if (!RSVP_API) {
+    $("tally").textContent = "—";
+    $("headcount").textContent = "—";
+    $("headcountLabel").textContent = "senarai belum diaktifkan";
+    $("listNote").hidden = false;
+    $("listNote").textContent = "Senarai kehadiran belum diaktifkan.";
+    $("wishNote").hidden = false;
+    $("wishNote").textContent = "Ruangan ucapan belum diaktifkan.";
+    return;
+  }
+  try {
+    const res = await fetch(RSVP_API + "?tab=" + encodeURIComponent(RSVP_TAB) + "&v=2");
+    const data = await res.json();
+    if (!data || Array.isArray(data) || data.v !== 2) throw new Error("backend not updated");
+    backendReady = true;
+    render(Array.isArray(data.rows) ? data.rows : []);
+  } catch {
+    $("listNote").hidden = false;
+    $("listNote").textContent = "Senarai tidak dapat dimuatkan sekarang.";
+    $("wishNote").hidden = false;
+    $("wishNote").textContent = "Ucapan tidak dapat dimuatkan sekarang.";
+  }
+}
+
+$("rSend").addEventListener("click", async () => {
+  const nama = $("rNama").value.trim();
+  const pax  = Math.max(1, Number($("rPax").value) || 1);
+  const ucap = $("rUcap").value.trim();
+
+  if (nama.length < 2) return say("Sila isi nama anda.", true);
+
+  // No (confirmed) backend → hand off to WhatsApp
+  if (!RSVP_API || !backendReady) {
+    const text = encodeURIComponent(
+      `Assalamualaikum. Pengesahan kehadiran Majlis Kesyukuran Atiq & Anis (12 Dis 2026).\n\n` +
+      `Nama: ${nama}\n` +
+      `Kehadiran: ${attending ? "Hadir (" + pax + " orang)" : "Tidak dapat hadir"}` +
+      (ucap ? `\nUcapan: ${ucap}` : "")
+    );
+    window.open("https://wa.me/" + RSVP_WA + "?text=" + text, "_blank", "noopener");
+    return say("Membuka WhatsApp untuk menghantar pengesahan anda.");
+  }
+
+  const btn = $("rSend");
+  btn.disabled = true;
+  btn.textContent = "Menghantar…";
+  say("");
+
+  try {
+    await fetch(RSVP_API, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },  // avoids CORS preflight
+      body: JSON.stringify({ tab: RSVP_TAB, nama, pax, hadir: attending, ucapan: ucap })
+    });
+    $("rNama").value = ""; $("rUcap").value = ""; $("rPax").value = 1;
+    say("Terima kasih. Pengesahan anda telah direkodkan.");
+    loadList();
+  } catch {
+    say("Penghantaran gagal. Sila cuba lagi atau hubungi kami terus.", true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Hantar";
+  }
+});
+
+loadList();
+
+/* ═══════════════════════════════════════════════════════
+   TAB PANELS
+   ═══════════════════════════════════════════════════════ */
+const scrim = $("scrim");
+let openPanel = null;
+let lastFocus = null;
+
+function openTab(id){
+  const p = $(id);
+  if (!p || openPanel === p) return;
+  if (openPanel) closeTab(true);
+
+  lastFocus = document.activeElement;
+  openPanel = p;
+
+  scrim.hidden = false;
+  requestAnimationFrame(() => scrim.classList.add("open"));
+
+  p.classList.add("open");
+  p.setAttribute("aria-hidden", "false");
+  document.body.classList.add("locked");
+
+  if (id === "tabLokasi") loadMap();
+
+  p.querySelector(".tab-close").focus();
+}
+
+function closeTab(silent){
+  if (!openPanel) return;
+  openPanel.classList.remove("open");
+  openPanel.setAttribute("aria-hidden", "true");
+  openPanel = null;
+
+  scrim.classList.remove("open");
+  setTimeout(() => { if (!openPanel) scrim.hidden = true; }, 320);
+  document.body.classList.remove("locked");
+
+  if (!silent && lastFocus) lastFocus.focus();
+}
+
+document.querySelectorAll("[data-open]").forEach(b =>
+  b.addEventListener("click", () => openTab(b.dataset.open)));
+
+document.querySelectorAll("[data-close]").forEach(b =>
+  b.addEventListener("click", () => closeTab()));
+
+scrim.addEventListener("click", () => closeTab());
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeTab();
+});
+
+// keep focus inside an open panel
+document.addEventListener("focusin", e => {
+  if (openPanel && !openPanel.contains(e.target)) {
+    openPanel.querySelector(".tab-close").focus();
+  }
+});
+
+/* ═══════════════════════════════════════════════════════
+   FIT THE NAMES TO ONE LINE
+   Measures the rendered text and scales it down only as far
+   as the container requires, so each name stays on a single
+   row at any width without being smaller than it has to be.
+   ═══════════════════════════════════════════════════════ */
+const NAME_CAP = 40;   // px ceiling for the couple names
+const NAME_MIN = 15;
+
+/* Shrinks a nowrap line just enough to fit its container, never further. */
+function fitLine(el, capPx, minPx){
+  if (!el) return;
+  el.style.fontSize = capPx + "px";
+  const avail = el.clientWidth;
+  const text  = el.scrollWidth;
+  if (text > avail && avail > 0){
+    const scaled = Math.floor(capPx * (avail / text) * 0.99);
+    el.style.fontSize = Math.max(minPx, scaled) + "px";
+  }
+}
+
+function fitNames(){
+  document.querySelectorAll(".couple .name").forEach(el =>
+    fitLine(el, NAME_CAP, NAME_MIN));
+  fitLine(document.getElementById("honorifics"), 15.2, 9);
+}
+
+fitNames();
+
+// webfonts change the metrics, so measure again once they land
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNames);
+
+let fitTimer;
+addEventListener("resize", () => {
+  clearTimeout(fitTimer);
+  fitTimer = setTimeout(fitNames, 120);
+});
+
+/* ═══════════════════════════════════════════════════════
+   BACKGROUND MUSIC
+   Browsers refuse to start audio without a user gesture, so the
+   track begins on the visitor's first tap, and the button lets
+   them stop it. If the file is missing the button never appears.
+   ═══════════════════════════════════════════════════════ */
+const bgm = $("bgm");
+const musicBtn = $("musicBtn");
+
+bgm.volume = 0.45;
+
+// only offer the control once we know the file actually exists
+bgm.addEventListener("canplay", () => { musicBtn.hidden = false; }, { once: true });
+bgm.addEventListener("error", () => { musicBtn.hidden = true; });
+bgm.load();
+
+function setMusic(on){
+  musicBtn.setAttribute("aria-pressed", String(on));
+  if (on){
+    bgm.play().catch(() => musicBtn.setAttribute("aria-pressed", "false"));
+  } else {
+    bgm.pause();
+  }
+}
+
+musicBtn.addEventListener("click", () => {
+  setMusic(bgm.paused);
+});
+
+// first tap anywhere starts it, once
+function firstTouch(){
+  if (bgm.paused && !musicBtn.hidden) setMusic(true);
+  removeEventListener("pointerdown", firstTouch);
+  removeEventListener("keydown", firstTouch);
+}
+addEventListener("pointerdown", firstTouch, { once: true });
+addEventListener("keydown", firstTouch, { once: true });
+
+// don't keep playing into a backgrounded tab
+let wasPlaying = false;
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden){
+    wasPlaying = !bgm.paused;
+    bgm.pause();
+  } else if (wasPlaying){
+    setMusic(true);
+  }
+});
+
+/* ═══════════════════════════════════════════════════════
+   FALLING PETALS
+   ═══════════════════════════════════════════════════════ */
+const reduced = matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+const PETAL_SHAPES = [
+  // leaf
+  '<svg viewBox="0 0 24 24"><path class="f" d="M12 2C19 7 19 17 12 22C5 17 5 7 12 2Z"/></svg>',
+  // five-petal blossom
+  '<svg viewBox="0 0 24 24"><g class="f"><circle cx="12" cy="6" r="4.6"/><circle cx="17.7" cy="10.2" r="4.6"/><circle cx="15.5" cy="17" r="4.6"/><circle cx="8.5" cy="17" r="4.6"/><circle cx="6.3" cy="10.2" r="4.6"/></g><circle cx="12" cy="12" r="2.6" fill="#F6C93A"/></svg>',
+  // single petal
+  '<svg viewBox="0 0 24 24"><path class="f" d="M12 21C4 15 5 6 12 3C19 6 20 15 12 21Z"/></svg>',
+  // small round bud
+  '<svg viewBox="0 0 24 24"><circle class="f" cx="12" cy="12" r="6"/></svg>'
+];
+const PETAL_COLOURS = ["#E2384F","#F58A2E","#F4A6C0","#F6B91E","#3D8B50","#2D7A49","#C8236B","#FFFFFF"];
+
+function makePetals(n){
+  const layer = $("petals");
+  if (!layer || reduced) return;
+  const frag = document.createDocumentFragment();
+
+  for (let i = 0; i < n; i++){
+    const d = document.createElement("div");
+    d.className = "petal";
+
+    const size  = 9 + Math.random() * 11;           // px — small
+    const dur   = 34 + Math.random() * 30;          // seconds to fall — slow
+    const delay = -Math.random() * dur;             // negative = already falling
+    const spin  = (Math.random() * 900 - 450) | 0;  // total rotation
+
+    d.style.left            = (Math.random() * 100).toFixed(1) + "%";
+    d.style.width           = size + "px";
+    d.style.color           = PETAL_COLOURS[(Math.random() * PETAL_COLOURS.length) | 0];
+    d.style.animationDuration = dur.toFixed(1) + "s";
+    d.style.animationDelay    = delay.toFixed(1) + "s";
+    d.style.setProperty("--spin", spin + "deg");
+    d.style.setProperty("--peak", (0.30 + Math.random() * 0.30).toFixed(2));
+
+    const sway = document.createElement("span");
+    sway.className = "sway";
+    sway.style.animationDuration = (5 + Math.random() * 6).toFixed(1) + "s";
+    sway.style.animationDelay    = (-Math.random() * 5).toFixed(1) + "s";
+    sway.style.setProperty("--drift", (6 + Math.random() * 16).toFixed(0) + "px");
+    sway.innerHTML = PETAL_SHAPES[(Math.random() * PETAL_SHAPES.length) | 0];
+
+    d.appendChild(sway);
+    frag.appendChild(d);
+  }
+  layer.appendChild(frag);
+}
+
+makePetals(matchMedia("(max-width:559px)").matches ? 22 : 30);
+
+/* ═══════════════════════════════════════════════════════
+   GENTLE AUTO-SCROLL
+   Runs after the card is opened and stops the moment the
+   visitor takes over — any wheel, drag or key press.
+   ═══════════════════════════════════════════════════════ */
+const AUTO_SPEED = 52;        // pixels per second
+let autoOn = false, autoLast = 0, autoRAF = 0;
+
+function autoStep(ts){
+  if (!autoOn) return;
+  if (!autoLast) autoLast = ts;
+  const dt = Math.min(80, ts - autoLast);   // ignore huge gaps after a stall
+  autoLast = ts;
+
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  if (window.scrollY >= max - 2){ stopAuto(); return; }
+
+  window.scrollBy(0, AUTO_SPEED * dt / 1000);
+  autoRAF = requestAnimationFrame(autoStep);
+}
+
+function startAuto(){
+  if (reduced) return;
+  autoOn = true;
+  autoLast = 0;
+  autoRAF = requestAnimationFrame(autoStep);
+}
+
+function stopAuto(){
+  autoOn = false;
+  autoLast = 0;
+  cancelAnimationFrame(autoRAF);
+}
+
+["wheel", "touchstart", "touchmove", "keydown", "mousedown"].forEach(ev =>
+  addEventListener(ev, stopAuto, { passive: true }));
+
+/* ═══════════════════════════════════════════════════════
+   OPENING GATE
+   The tap that opens the card is also the user gesture the
+   browser needs before it will let any audio play.
+   ═══════════════════════════════════════════════════════ */
+const gate = $("gate");
+document.body.classList.add("gated");
+
+function openCard(){
+  if (!gate || gate.classList.contains("open")) return;
+
+  // the click itself is the gesture the browser needs for audio
+  setMusic(true);
+
+  gate.classList.add("open");           // content fades, curtains part
+  document.body.classList.remove("gated");
+
+  const wait = reduced ? 0 : 1500;
+  setTimeout(() => gate.classList.add("done"), wait);   // stop it catching taps
+  setTimeout(startAuto, wait + 400);
+}
+
+$("gateOpen").addEventListener("click", openCard);
+
+/* ═══════════════════════════════════════════════════════
+   SCROLL MOTION
+   ═══════════════════════════════════════════════════════ */
+
+/* every direct child of a panel reveals on its own, in sequence */
+document.querySelectorAll(".panel").forEach(panel => {
+  [...panel.children].forEach((el, i) => {
+    if (el.hasAttribute("hidden")) return;      // shown later by JS
+    if (el.classList.contains("art")) return;   // artwork keeps its own opacity
+    el.classList.add("reveal");
+    el.dataset.delay = Math.min(i * 150, 680);
+  });
+});
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    reveal(e.target);
+  });
+}, { threshold: 0, rootMargin: "0px 0px -20% 0px" });
+
+function reveal(el){
+  if (el.classList.contains("in")) return;
+  el.style.transitionDelay = (el.dataset.delay || 0) + "ms";
+  el.classList.add("in");
+  io.unobserve(el);
+}
+
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+/* Failsafe: anything already within the viewport when the page settles gets
+   revealed directly. Safari can skip the initial observer callback when the
+   page is restored from the back/forward cache or when layout shifts as the
+   webfonts land, which would otherwise leave elements stuck at opacity 0. */
+function sweep(){
+  const vh = window.innerHeight;
+  document.querySelectorAll(".reveal:not(.in)").forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < vh && r.bottom > 0) reveal(el);
+  });
+}
+
+addEventListener("load", sweep);
+addEventListener("pageshow", sweep);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(sweep);
+setTimeout(sweep, 1200);
+
+/* cover drifts and fades as it scrolls away; progress hairline tracks the page */
+const plateWrap = document.querySelector(".plate-wrap");
+const cue = document.querySelector(".scroll-cue");
+const bar = $("progress");
+
+/* side sprigs drift slowly against the text as they pass through view */
+const sides = [...document.querySelectorAll(".art--side")].map(el => ({
+  el,
+  img: el.querySelector("img")
+}));
+
+function driftSides(vh){
+  sides.forEach(s => {
+    const r = s.el.getBoundingClientRect();
+    if (r.bottom < -200 || r.top > vh + 200) return;   // offscreen, skip
+    const centred = (r.top + r.height / 2 - vh / 2) / vh;   // -1 .. 1
+    s.img.style.transform = `translateY(${(-centred * 34).toFixed(1)}px)`;
+  });
+}
+
+let ticking = false;
+
+function onScroll(){
+  const y = window.scrollY;
+  const vh = window.innerHeight;
+
+  const max = document.documentElement.scrollHeight - vh;
+  bar.style.width = (max > 0 ? Math.min(100, (y / max) * 100) : 0) + "%";
+
+  sweep();   // ongoing safety net — catches any reveal the observer missed
+             // during a fast flick or a layout shift mid-scroll
+
+  if (!reduced){
+    driftSides(vh);
+
+    if (y < vh){
+      const p = y / vh;
+      plateWrap.style.transform = `translateY(${y * .28}px) scale(${1 - p * .07})`;
+      plateWrap.style.opacity = String(Math.max(0, 1 - p * 1.5));
+      if (cue) cue.style.opacity = String(Math.max(0, 1 - p * 3));
+    }
+  }
+  ticking = false;
+}
+
+addEventListener("scroll", () => {
+  if (!ticking){
+    requestAnimationFrame(onScroll);
+    ticking = true;
+  }
+}, { passive: true });
+
+onScroll();
+</script>
+</body>
+</html>
