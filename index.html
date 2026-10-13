@@ -752,7 +752,9 @@ img,svg{display:block;max-width:100%}
   inset:0;
   display:grid;
   place-items:center;
+  align-content:center;
   padding:calc(var(--pad) + 14px);
+  padding-top:calc(var(--pad) + 14px + 8vh);
   text-align:center;
   transition:opacity .5s ease,transform .7s cubic-bezier(.3,.7,.3,1);
 }
@@ -787,38 +789,16 @@ img,svg{display:block;max-width:100%}
 }
 .gate-art > div{position:absolute}
 .gate-art img{display:block;width:100%;height:auto}
-.gate-art .gf-tl{top:-8px;left:-8px;width:68%}
-.gate-art .gf-tl img{transform:rotate(180deg)}
-.gate-art .gf-br{bottom:-8px;right:-8px;width:52%}
 .gate-art .gl{width:56%;opacity:.15}
 .gate-art .gl1{top:34%;left:-26%;transform:rotate(-34deg)}
 .gate-art .gl2{top:22%;right:-24%;transform:scaleX(-1) rotate(18deg)}
 .gate-art .gl3{bottom:24%;left:-22%;transform:rotate(26deg)}
 .gate-art .gl4{bottom:34%;right:-26%;transform:scaleX(-1) rotate(-30deg)}
-.gate-frame{
-  --sy:0px;
-  --fw:min(100vw,520px);
-  -webkit-mask-image:linear-gradient(#000,#000),url(art/mask-tl.png),url(art/mask-br.png);
-  mask-image:linear-gradient(#000,#000),url(art/mask-tl.png),url(art/mask-br.png);
-  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
-  -webkit-mask-composite:source-out,source-over,source-over;
-  mask-composite:subtract,add,add;
-  -webkit-mask-size:100% 100%,calc(var(--fw) * .68) auto,calc(var(--fw) * .52) auto;
-  mask-size:100% 100%,calc(var(--fw) * .68) auto,calc(var(--fw) * .52) auto;
-  -webkit-mask-position:0 0,left -17px top -17px,right -17px bottom -17px;
-  mask-position:0 0,left -17px top -17px,right -17px bottom -17px;
-}
 @media (min-width:560px){
-  .gate-art .gf-tl{width:50%}
-  .gate-art .gf-br{width:40%}
   .gate-art .gl{width:42%}
-  .gate-frame{
-    -webkit-mask-size:100% 100%,calc(var(--fw) * .50) auto,calc(var(--fw) * .40) auto;
-    mask-size:100% 100%,calc(var(--fw) * .50) auto,calc(var(--fw) * .40) auto;
-  }
 }
 
-.gate .monogram{margin:0 0 44px}
+.gate .monogram{margin:0 0 52px}
 .gate .monogram .glyph{font-size:5rem}
 .gate .monogram .amp{font-size:2.7rem}
 
@@ -1074,8 +1054,11 @@ body.locked{overflow:hidden}
   background:linear-gradient(var(--paper) 24%,rgba(8,53,40,0));
 }
 .edge--bottom{
-  bottom:calc(var(--bar-h) + env(safe-area-inset-bottom));
-  background:linear-gradient(rgba(8,53,40,0),var(--paper) 76%);
+  /* runs on down behind the menu bar, so no strip of text can show above it
+     whatever the bar's real height turns out to be on a given phone */
+  bottom:0;
+  height:calc(74px + var(--bar-h) + env(safe-area-inset-bottom) + 8px);
+  background:linear-gradient(rgba(8,53,40,0),var(--paper) 74px);
 }
 
 /* scroll progress hairline */
@@ -1139,8 +1122,6 @@ body.locked{overflow:hidden}
       <div class="gl gl2"><img src="art/leaves.webp" alt="" width="900" height="672"></div>
       <div class="gl gl3"><img src="art/leaves.webp" alt="" width="900" height="672"></div>
       <div class="gl gl4"><img src="art/leaves.webp" alt="" width="900" height="672"></div>
-      <div class="gf-tl"><img src="art/flower.webp" alt="" width="900" height="885" fetchpriority="high"></div>
-      <div class="gf-br"><img src="art/flower.webp" alt="" width="900" height="885" fetchpriority="high"></div>
     </div>
     <div class="gate-frame" aria-hidden="true"></div>
     <div class="monogram" aria-label="A dan A">
@@ -2152,6 +2133,21 @@ function driftSides(vh){
 let ticking = false;
 
 const frameEl = document.querySelector(".frame");
+
+/* the menu bar's real height depends on the phone's font metrics: measure it so
+   the frame, fades and bottom flower line up with its top edge exactly */
+function syncBarHeight(){
+  const tb = document.querySelector(".bar");
+  if (!tb) return;
+  const pb = parseFloat(getComputedStyle(tb).paddingBottom) || 0;
+  const h = tb.getBoundingClientRect().height - pb;
+  if (h > 40 && h < 140) document.documentElement.style.setProperty("--bar-h", h.toFixed(1) + "px");
+}
+syncBarHeight();
+addEventListener("resize", syncBarHeight);
+addEventListener("orientationchange", syncBarHeight);
+addEventListener("pageshow", syncBarHeight);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncBarHeight);
 
 function onScroll(){
   const y = window.scrollY;
