@@ -7,7 +7,7 @@
 <meta name="description" content="Majlis Kesyukuran Atiq &amp; Anis · Sabtu, 12 Disember 2026 · Dewan Perkahwinan, Homestay Ghumoh Mek, Pasir Mas, Kelantan">
 <meta name="theme-color" content="#083528">
 <meta property="og:title" content="Majlis Kesyukuran — Atiq &amp; Anis">
-<meta property="og:description" content="Sabtu, 12 Disember 2026 · 12:00 PM – 5:00 PM · Pasir Mas, Kelantan">
+<meta property="og:description" content="Sabtu, 12 Disember 2026 · 11:30 AM – 5:30 PM · Pasir Mas, Kelantan">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nuuralatiqullah-oss.github.io/invitationCard2/">
 <meta property="og:image" content="https://nuuralatiqullah-oss.github.io/invitationCard2/og-image.png">
@@ -346,6 +346,9 @@ img,svg{display:block;max-width:100%}
   letter-spacing:.09em;
   line-height:1.7;
 }
+/* venue name stays on one line at every phone width */
+.oneline{white-space:nowrap;font-size:clamp(.72rem,3.6vw,.95rem);letter-spacing:.04em}
+
 .detail .big-date{
   font-family:var(--display);
   font-size:3.7rem;
@@ -363,7 +366,7 @@ img,svg{display:block;max-width:100%}
 }
 
 /* aturcara */
-.agenda{list-style:none;margin:26px auto 0;padding:0;max-width:280px;text-align:left}
+.agenda{list-style:none;margin:26px auto 0;padding:0;max-width:312px;text-align:left}
 .agenda li{
   display:flex;align-items:baseline;gap:14px;
   padding:14px 0;
@@ -371,7 +374,7 @@ img,svg{display:block;max-width:100%}
 }
 .agenda li:last-child{border-bottom:0}
 .agenda time{
-  flex:0 0 84px;
+  flex:0 0 88px;
   font-family:var(--display);
   font-size:1.15rem;font-weight:500;
   color:var(--gold);
@@ -723,6 +726,7 @@ img,svg{display:block;max-width:100%}
   transition:transform 1.15s cubic-bezier(.72,0,.2,1);
   will-change:transform;
 }
+.gate-panel{background:url(art/texture.webp) 0 0/520px 520px,var(--paper)}
 .gate-panel--l{left:0;border-right:1px solid rgba(201,162,75,.5)}
 .gate-panel--r{right:0}
 
@@ -768,6 +772,50 @@ img,svg{display:block;max-width:100%}
   position:absolute;
   inset:5px;
   border:1px solid rgba(201,162,75,.55);
+}
+
+
+/* flowers + leaves on the opening page, in the same spots as the cover so the
+   hand-over to the cover is seamless; the frame is cut away beneath the flowers */
+.gate-art{
+  position:absolute;
+  inset:0;
+  max-width:520px;
+  margin:0 auto;
+  overflow:hidden;
+  pointer-events:none;
+}
+.gate-art > div{position:absolute}
+.gate-art img{display:block;width:100%;height:auto}
+.gate-art .gf-tl{top:-8px;left:-8px;width:68%}
+.gate-art .gf-tl img{transform:rotate(180deg)}
+.gate-art .gf-br{bottom:-8px;right:-8px;width:52%}
+.gate-art .gl{width:56%;opacity:.15}
+.gate-art .gl1{top:34%;left:-26%;transform:rotate(-34deg)}
+.gate-art .gl2{top:22%;right:-24%;transform:scaleX(-1) rotate(18deg)}
+.gate-art .gl3{bottom:24%;left:-22%;transform:rotate(26deg)}
+.gate-art .gl4{bottom:34%;right:-26%;transform:scaleX(-1) rotate(-30deg)}
+.gate-frame{
+  --sy:0px;
+  --fw:min(100vw,520px);
+  -webkit-mask-image:linear-gradient(#000,#000),url(art/mask-tl.png),url(art/mask-br.png);
+  mask-image:linear-gradient(#000,#000),url(art/mask-tl.png),url(art/mask-br.png);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-composite:source-out,source-over,source-over;
+  mask-composite:subtract,add,add;
+  -webkit-mask-size:100% 100%,calc(var(--fw) * .68) auto,calc(var(--fw) * .52) auto;
+  mask-size:100% 100%,calc(var(--fw) * .68) auto,calc(var(--fw) * .52) auto;
+  -webkit-mask-position:0 0,left -17px top -17px,right -17px bottom -17px;
+  mask-position:0 0,left -17px top -17px,right -17px bottom -17px;
+}
+@media (min-width:560px){
+  .gate-art .gf-tl{width:50%}
+  .gate-art .gf-br{width:40%}
+  .gate-art .gl{width:42%}
+  .gate-frame{
+    -webkit-mask-size:100% 100%,calc(var(--fw) * .50) auto,calc(var(--fw) * .40) auto;
+    mask-size:100% 100%,calc(var(--fw) * .50) auto,calc(var(--fw) * .40) auto;
+  }
 }
 
 .gate .monogram{margin:0 0 44px}
@@ -1086,6 +1134,14 @@ body.locked{overflow:hidden}
   <div class="gate-panel gate-panel--r" aria-hidden="true"></div>
 
   <div class="gate-inner">
+    <div class="gate-art" aria-hidden="true">
+      <div class="gl gl1"><img src="art/leaves.webp" alt="" width="900" height="672"></div>
+      <div class="gl gl2"><img src="art/leaves.webp" alt="" width="900" height="672"></div>
+      <div class="gl gl3"><img src="art/leaves.webp" alt="" width="900" height="672"></div>
+      <div class="gl gl4"><img src="art/leaves.webp" alt="" width="900" height="672"></div>
+      <div class="gf-tl"><img src="art/flower.webp" alt="" width="900" height="885" fetchpriority="high"></div>
+      <div class="gf-br"><img src="art/flower.webp" alt="" width="900" height="885" fetchpriority="high"></div>
+    </div>
     <div class="gate-frame" aria-hidden="true"></div>
     <div class="monogram" aria-label="A dan A">
       <span class="glyph">A</span>
@@ -1179,9 +1235,9 @@ body.locked{overflow:hidden}
     </p>
 
     <p class="hosts">
-      RAHAIMI BIN ZAKARIA<br>
+      HJ RAHAIMI BIN ZAKARIA<br>
       <span class="amp-sm">&amp;</span><br>
-      ZAKIAH BINTI TAIB
+      HJH ZAKIAH BINTI TAIB
     </p>
 
     <hr class="rule">
@@ -1221,14 +1277,13 @@ body.locked{overflow:hidden}
 
     <dl class="detail">
       <dt>Masa</dt>
-      <dd>12:00 PM &ndash; 5:00 PM</dd>
+      <dd>11:30 AM &ndash; 5:30 PM</dd>
     </dl>
 
     <dl class="detail">
       <dt>Lokasi</dt>
       <dd>
-        Dewan Perkahwinan<br>
-        Homestay Ghumoh Mek<br>
+        <span class="oneline">Dewan Perkahwinan, Homestay Ghumoh Mek</span><br>
         Kampung Banggol Chicha<br>
         17000 Pasir Mas, Kelantan
       </dd>
@@ -1247,8 +1302,9 @@ body.locked{overflow:hidden}
     <p class="eyebrow">Aturcara Majlis</p>
 
     <ol class="agenda">
-      <li><time>12:00 PM</time><p>Ketibaan tetamu</p></li>
-      <li><time>5:00 PM</time><p>Majlis bersurai</p></li>
+      <li><time>11:30 AM</time><p>Majlis bermula</p></li>
+      <li><time>12:00 PM</time><p>Ketibaan pengantin</p></li>
+      <li><time>5:30 PM</time><p>Majlis berakhir</p></li>
     </ol>
   </section>
 
@@ -1469,8 +1525,7 @@ body.locked{overflow:hidden}
 
   <div class="tab-body">
     <p class="addr">
-      Dewan Perkahwinan<br>
-      Homestay Ghumoh Mek<br>
+      <span class="oneline">Dewan Perkahwinan, Homestay Ghumoh Mek</span><br>
       Kampung Banggol Chicha<br>
       17000 Pasir Mas, Kelantan
     </p>
@@ -1520,8 +1575,8 @@ const MAP_URL = "https://www.google.com/maps?cid=13293553076066570252";   // Hom
 const PIN     = "6.0526739,102.1203413";   // optional exact "lat,lng" for the Waze pin; blank = search by MAP_QUERY
 const MAP_QUERY = "Homestay Ghumoh Mek, Banggol Chicha, 17000 Pasir Mas, Kelantan";   // name Google Maps knows the venue by
 const RSVP_WA = "60199821344";    // fallback WhatsApp number
-const WHEN    = "2026-12-12T12:00:00+08:00";
-const ENDS    = "2026-12-12T17:00:00+08:00";
+const WHEN    = "2026-12-12T11:30:00+08:00";
+const ENDS    = "2026-12-12T17:30:00+08:00";
 const HIJRI   = "3 Rejab 1448H";   // moon-sighting can shift this by a day
 
 // Paste your Google Apps Script /exec URL here to turn on the live
