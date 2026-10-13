@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Atiq &amp; Anis — Majlis Kesyukuran</title>
 <meta name="description" content="Majlis Kesyukuran Atiq &amp; Anis · Sabtu, 12 Disember 2026 · Dewan Majlis Ghumoh Mek, Pasir Mas, Kelantan">
-<meta name="theme-color" content="#EFEDE3">
+<meta name="theme-color" content="#083528">
 <meta property="og:title" content="Majlis Kesyukuran — Atiq &amp; Anis">
 <meta property="og:description" content="Sabtu, 12 Disember 2026 · 12:00 PM – 5:00 PM · Pasir Mas, Kelantan">
 <meta property="og:type" content="website">
@@ -23,15 +23,15 @@
    TOKENS
    ───────────────────────────────────────────── */
 :root{
-  --paper:#EFEDE3;
-  --paper-warm:#F6F4EC;
-  --ink:#16161A;           /* darkened for contrast */
-  --ink-soft:#3E3E3C;      /* darkened for contrast */
-  --gold:#2F5D3E;          /* text-safe deep green accent */
-  --gold-line:#7FA586;     /* decorative green line */
-  --oxblood:#7A2E27;
-  --frame:#2F5D3E;
-  --rule:rgba(22,22,26,.26);
+  --paper:#083528;         /* deep emerald */
+  --paper-warm:#0D4435;    /* raised panels */
+  --ink:#F4EAD0;           /* ivory text */
+  --ink-soft:#CDBF98;
+  --gold:#DDBB66;          /* gold accent (text-safe on emerald) */
+  --gold-line:#B8923F;     /* decorative gold lines */
+  --oxblood:#F0AE94;       /* warning text, readable on emerald */
+  --frame:#C9A24B;
+  --rule:rgba(221,187,102,.30);
 
   --display:"Cormorant Garamond",Georgia,serif;
   --label:"Jost",-apple-system,"Segoe UI",sans-serif;
@@ -62,10 +62,10 @@ body::before{
   inset:0;
   pointer-events:none;
   z-index:0;
-  opacity:.5;
+  opacity:1;
   background-image:
-    radial-gradient(circle at 18% 12%, rgba(127,97,40,.07), transparent 55%),
-    radial-gradient(circle at 82% 78%, rgba(122,46,39,.05), transparent 50%);
+    radial-gradient(ellipse at 50% 18%, rgba(24,112,84,.55), transparent 62%),
+    radial-gradient(ellipse at 50% 100%, rgba(2,24,18,.7), transparent 60%);
 }
 
 img,svg{display:block;max-width:100%}
@@ -94,7 +94,7 @@ img,svg{display:block;max-width:100%}
   content:"";
   position:absolute;
   inset:5px;
-  border:1px solid rgba(127,165,134,.55);
+  border:1px solid rgba(201,162,75,.55);
 }
 
 /* ─────────────────────────────────────────────
@@ -147,12 +147,12 @@ img,svg{display:block;max-width:100%}
 .art img{width:100%;height:auto;display:block}
 
 /* cover corners */
-.art--tl{top:-2%;left:-10%;width:48%}
-.art--br{bottom:3%;right:-10%;width:50%}
-.art--bl{bottom:9%;left:-11%;width:38%;opacity:.55}
+.art--tl{top:-2%;left:-8%;width:58%}
+.art--br{bottom:2%;right:-8%;width:56%}
+.art--bl{bottom:9%;left:-11%;width:38%;opacity:.8}
 
 /* small sprigs peeking in from the edges as you scroll */
-.art--side{width:38%;opacity:.30}
+.art--side{width:38%;opacity:.62}
 .art--side img{transition:none;will-change:transform}
 .art--side.l{left:-19%}
 .art--side.r{right:-19%}
@@ -171,13 +171,13 @@ img,svg{display:block;max-width:100%}
 }
 
 /* section accents, quieter */
-.art--salam{top:15%;right:-22%;width:44%;opacity:.32}
-.art--wish{top:14%;left:-12%;width:40%;opacity:.30;transform:rotate(-20deg)}
-.art--end{top:16%;right:-12%;width:42%;opacity:.34}
-.art--end2{bottom:-2%;left:-10%;width:36%;opacity:.34}
+.art--salam{top:15%;right:-22%;width:44%;opacity:.6}
+.art--wish{top:14%;left:-12%;width:40%;opacity:.6;transform:rotate(-20deg)}
+.art--end{top:16%;right:-12%;width:42%;opacity:.62}
+.art--end2{bottom:-2%;left:-10%;width:36%;opacity:.62}
 
 /* butterfly, sized up but sitting quietly behind the text */
-.art--bf1{top:24%;right:0;width:26%;opacity:.55}
+.art--bf1{top:24%;right:0;width:26%;opacity:.8}
 
 @media (min-width:560px){
   .art--tl{left:-7%;width:38%}
@@ -207,7 +207,7 @@ img,svg{display:block;max-width:100%}
   text-align:center;
   background:var(--paper-warm);
   border:1px solid var(--gold-line);
-  outline:1px solid rgba(127,165,134,.6);
+  outline:1px solid rgba(201,162,75,.6);
   outline-offset:5px;
   box-shadow:0 18px 44px -26px rgba(22,22,26,.5);
 }
@@ -314,7 +314,7 @@ img,svg{display:block;max-width:100%}
 .couple .heart svg{
   width:16px;height:auto;
   margin:0 auto;
-  fill:var(--ink);        /* swap for var(--gold) or var(--oxblood) if you prefer */
+  fill:var(--gold);
   stroke:none;
 }
 
@@ -383,7 +383,7 @@ img,svg{display:block;max-width:100%}
   padding:15px 16px;
   border:1px solid var(--rule);
   text-decoration:none;color:inherit;
-  background:rgba(246,244,236,.6);
+  background:rgba(13,68,53,.6);
   transition:border-color .25s ease,background .25s ease;
 }
 .contact:hover,.contact:focus-visible{border-color:var(--gold-line);background:var(--paper-warm)}
@@ -438,7 +438,7 @@ img,svg{display:block;max-width:100%}
 }
 .field textarea{min-height:82px;resize:vertical;line-height:1.6}
 .field input:focus,.field textarea:focus,.field select:focus{
-  outline:none;border-color:var(--gold);background:#fff;
+  outline:none;border-color:var(--gold);background:#10523F;
 }
 
 .choice{display:flex;gap:10px}
@@ -512,7 +512,7 @@ img,svg{display:block;max-width:100%}
   padding:20px;
   background:var(--paper-warm);
   border:1px solid var(--gold-line);
-  outline:1px solid rgba(47,93,62,.35);
+  outline:1px solid rgba(201,162,75,.4);
   outline-offset:4px;
 }
 .qr-card img{width:100%;height:auto}
@@ -648,7 +648,7 @@ img,svg{display:block;max-width:100%}
 .contact-card{
   padding:16px;
   border:1px solid var(--rule);
-  background:rgba(246,244,236,.6);
+  background:rgba(13,68,53,.6);
   text-align:left;
 }
 .contact-card .who b{
@@ -674,12 +674,12 @@ img,svg{display:block;max-width:100%}
 .map-embed{
   margin:22px 0 0;
   border:1px solid var(--gold-line);
-  outline:1px solid rgba(47,93,62,.35);
+  outline:1px solid rgba(201,162,75,.4);
   outline-offset:4px;
   aspect-ratio:4/3;
   background:var(--paper-warm);
 }
-.map-embed iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.35) contrast(.95)}
+.map-embed iframe{width:100%;height:100%;border:0;display:block;filter:invert(.9) hue-rotate(180deg) saturate(.6) contrast(.9) brightness(.9)}
 
 .addr{
   margin:22px 0 0;
@@ -710,7 +710,7 @@ img,svg{display:block;max-width:100%}
   transition:transform 1.15s cubic-bezier(.72,0,.2,1);
   will-change:transform;
 }
-.gate-panel--l{left:0;border-right:1px solid rgba(127,165,134,.5)}
+.gate-panel--l{left:0;border-right:1px solid rgba(201,162,75,.5)}
 .gate-panel--r{right:0}
 
 /* a soft edge so the halves read as physical panels as they part */
@@ -754,7 +754,7 @@ img,svg{display:block;max-width:100%}
   content:"";
   position:absolute;
   inset:5px;
-  border:1px solid rgba(127,165,134,.55);
+  border:1px solid rgba(201,162,75,.55);
 }
 
 .gate .monogram{margin:0 0 44px}
@@ -903,7 +903,7 @@ body.gated .enter{animation-play-state:paused}
   content:"";
   position:absolute;
   inset:5px 5px 0 5px;
-  border:1px solid rgba(127,165,134,.55);
+  border:1px solid rgba(201,162,75,.55);
   border-bottom:0;
   pointer-events:none;
 }
@@ -1009,11 +1009,11 @@ body.locked{overflow:hidden}
 }
 .edge--top{
   top:0;
-  background:linear-gradient(var(--paper) 24%,rgba(239,237,227,0));
+  background:linear-gradient(var(--paper) 24%,rgba(8,53,40,0));
 }
 .edge--bottom{
   bottom:calc(var(--bar-h) + env(safe-area-inset-bottom));
-  background:linear-gradient(rgba(239,237,227,0),var(--paper) 76%);
+  background:linear-gradient(rgba(8,53,40,0),var(--paper) 76%);
 }
 
 /* scroll progress hairline */
@@ -1114,10 +1114,10 @@ body.locked{overflow:hidden}
   <!-- ══════════ COVER ══════════ -->
   <section class="cover">
     <div class="art art--tl enter d1" aria-hidden="true">
-      <img style="width:121.42%;max-width:none;margin:-17.66% 0 0.00% -18.81%" src="art/corner-tl.svg" alt="" width="1162" height="1561" fetchpriority="high">
+      <img style="width:124.45%;max-width:none;margin:-8.57% 0 0.00% -6.17%" src="art/corner-tl.svg" alt="" width="1191" height="1474" fetchpriority="high">
     </div>
     <div class="art art--br enter d1" aria-hidden="true">
-      <img style="width:125.89%;max-width:none;margin:0.00% 0 -19.87% -10.71%" src="art/corner-br.svg" alt="" width="1128" height="1675" fetchpriority="high">
+      <img style="width:135.27%;max-width:none;margin:0.00% 0 -14.17% -15.74%" src="art/corner-br.svg" alt="" width="1212" height="1624" fetchpriority="high">
     </div>
     <div class="art art--bl" aria-hidden="true">
       <img src="art/butterfly-a.svg" alt="" width="914" height="1082" fetchpriority="high">
@@ -1155,10 +1155,10 @@ body.locked{overflow:hidden}
   <!-- ══════════ SALAM ══════════ -->
   <section class="panel">
     <div class="art art--salam" aria-hidden="true" style="transform:scaleX(-1)">
-      <img style="width:104.58%;max-width:none;margin:0.00% 0 0.00% -4.58%" src="art/leaf-a.svg" alt="" width="1187" height="1090" loading="lazy">
+      <img style="width:131.10%;max-width:none;margin:-25.99% 0 0.00% -3.52%" src="art/leaf-a.svg" alt="" width="1488" height="1385" loading="lazy">
     </div>
     <div class="art art--side l art--s6" aria-hidden="true">
-      <img style="width:125.33%;max-width:none;margin:0.00% 0 0.00% -25.33%" src="art/leaf-d.svg" alt="" width="1133" height="1441" loading="lazy">
+      <img style="width:104.54%;max-width:none;margin:-1.44% 0 0.00% -4.54%" src="art/leaf-d.svg" alt="" width="945" height="1454" loading="lazy">
     </div>
 
     <p class="bismillah">السلام عليكم</p>
@@ -1195,7 +1195,7 @@ body.locked{overflow:hidden}
     <hr class="rule">
 
     <div class="art art--side l art--s1" aria-hidden="true" style="transform:rotate(-24deg)">
-      <img style="width:119.42%;max-width:none;margin:0.00% 0 0.00% -19.42%" src="art/leaf-c.svg" alt="" width="1156" height="1159" loading="lazy">
+      <img style="width:103.93%;max-width:none;margin:-14.05% 0 0.00% -3.93%" src="art/leaf-c.svg" alt="" width="1006" height="1295" loading="lazy">
     </div>
 
     <dl class="detail">
@@ -1229,7 +1229,7 @@ body.locked{overflow:hidden}
   <section class="panel panel--tight">
     <hr class="rule">
     <div class="art art--side r art--s2" aria-hidden="true" style="transform:scaleX(-1)">
-      <img style="width:113.39%;max-width:none;margin:-0.75% 0 0.00% -13.39%" src="art/leaf-b.svg" alt="" width="1211" height="1082" loading="lazy">
+      <img style="width:108.61%;max-width:none;margin:-23.88% 0 0.00% -3.46%" src="art/leaf-b.svg" alt="" width="1160" height="1329" loading="lazy">
     </div>
 
     <p class="eyebrow">Aturcara Majlis</p>
@@ -1244,7 +1244,7 @@ body.locked{overflow:hidden}
   <section class="panel panel--tight">
     <hr class="rule">
     <div class="art art--side l art--s3" aria-hidden="true">
-      <img style="width:104.58%;max-width:none;margin:0.00% 0 0.00% -4.58%" src="art/leaf-a.svg" alt="" width="1187" height="1090" loading="lazy">
+      <img style="width:131.10%;max-width:none;margin:-25.99% 0 0.00% -3.52%" src="art/leaf-a.svg" alt="" width="1488" height="1385" loading="lazy">
     </div>
     <div class="art art--bf1" aria-hidden="true" style="transform:rotate(-10deg)">
       <img src="art/butterfly-b.svg" alt="" width="1536" height="1024" loading="lazy">
@@ -1266,10 +1266,10 @@ body.locked{overflow:hidden}
   <section class="panel panel--tight" id="kehadiran">
     <hr class="rule">
     <div class="art art--side r art--s4" aria-hidden="true" style="transform:scaleX(-1)">
-      <img style="width:119.42%;max-width:none;margin:0.00% 0 0.00% -19.42%" src="art/leaf-c.svg" alt="" width="1156" height="1159" loading="lazy">
+      <img style="width:103.93%;max-width:none;margin:-14.05% 0 0.00% -3.93%" src="art/leaf-c.svg" alt="" width="1006" height="1295" loading="lazy">
     </div>
     <div class="art art--side l art--s5" aria-hidden="true">
-      <img style="width:113.47%;max-width:none;margin:0.00% 0 0.00% -13.47%" src="art/leaf-e.svg" alt="" width="918" height="956" loading="lazy">
+      <img style="width:112.98%;max-width:none;margin:-16.93% 0 0.00% -5.07%" src="art/leaf-e.svg" alt="" width="914" height="1093" loading="lazy">
     </div>
 
     <p class="eyebrow">Kehadiran</p>
@@ -1284,7 +1284,7 @@ body.locked{overflow:hidden}
   <section class="panel panel--tight" id="ucapan">
     <hr class="rule">
     <div class="art art--wish" aria-hidden="true">
-      <img style="width:113.39%;max-width:none;margin:-0.75% 0 0.00% -13.39%" src="art/leaf-b.svg" alt="" width="1211" height="1082" loading="lazy">
+      <img style="width:108.61%;max-width:none;margin:-23.88% 0 0.00% -3.46%" src="art/leaf-b.svg" alt="" width="1160" height="1329" loading="lazy">
     </div>
 
     <p class="eyebrow">Ucapan</p>
@@ -1299,10 +1299,10 @@ body.locked{overflow:hidden}
   <section class="panel">
     <hr class="rule">
     <div class="art art--end" aria-hidden="true" style="transform:scaleX(-1)">
-      <img style="width:119.42%;max-width:none;margin:0.00% 0 0.00% -19.42%" src="art/leaf-c.svg" alt="" width="1156" height="1159" loading="lazy">
+      <img style="width:103.93%;max-width:none;margin:-14.05% 0 0.00% -3.93%" src="art/leaf-c.svg" alt="" width="1006" height="1295" loading="lazy">
     </div>
     <div class="art art--end2" aria-hidden="true">
-      <img style="width:125.33%;max-width:none;margin:0.00% 0 0.00% -25.33%" src="art/leaf-d.svg" alt="" width="1133" height="1441" loading="lazy">
+      <img style="width:104.54%;max-width:none;margin:-1.44% 0 0.00% -4.54%" src="art/leaf-d.svg" alt="" width="945" height="1454" loading="lazy">
     </div>
 
     <p class="doa-long">
@@ -1901,7 +1901,7 @@ const PETAL_SHAPES = [
   // small round bud
   '<svg viewBox="0 0 24 24"><circle class="f" cx="12" cy="12" r="6"/></svg>'
 ];
-const PETAL_COLOURS = ["#E2384F","#F58A2E","#F4A6C0","#F6B91E","#3D8B50","#2D7A49","#C8236B","#FFFFFF"];
+const PETAL_COLOURS = ["#DDBB66","#F2DC95","#F4EAD0","#B8923F","#4FAE8A","#DDBB66","#F2DC95"];
 
 function makePetals(n){
   const layer = $("petals");
@@ -1923,7 +1923,7 @@ function makePetals(n){
     d.style.animationDuration = dur.toFixed(1) + "s";
     d.style.animationDelay    = delay.toFixed(1) + "s";
     d.style.setProperty("--spin", spin + "deg");
-    d.style.setProperty("--peak", (0.30 + Math.random() * 0.30).toFixed(2));
+    d.style.setProperty("--peak", (0.35 + Math.random() * 0.35).toFixed(2));
 
     const sway = document.createElement("span");
     sway.className = "sway";
